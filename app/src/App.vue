@@ -16,6 +16,7 @@
   v-bind:key='objo.id'>
     <p>{{ objo.id + 2 + ' 1'}}</p>
   </div>
+  <TheOne></TheOne>
 
 </template>
 
@@ -23,6 +24,7 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import TheCabc from './components/TheCabc.vue';
 import TheHeader from './components/TheHeader.vue'
+import TheOne from './components/TheOne.vue';
 
 export default {
   name: 'App',
@@ -45,7 +47,8 @@ export default {
   components: {
     /*(HelloWorld,*/
     TheHeader,
-    TheCabc
+    TheCabc,
+    TheOne,
   }
 }
 </script>

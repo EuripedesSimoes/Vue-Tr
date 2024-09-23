@@ -12,14 +12,25 @@
             <li>li 3</li>
         </ul>
     </form>
+    <div>
+        <input type="text">
+        {{ name }}
+
+    </div>
 </div>
 </template>
 
 <script>
 export default{
+ name: 'App',
+ 
+ data () {
+ return {
+    name: 'Calvos'
 
+ }
 }
-
+}
 </script>
 
 <style scoped>
