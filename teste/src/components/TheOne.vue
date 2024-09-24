@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button type="button" id="btn">Calique</button>
+        <button type="button" id="btn">Caliqu</button>
     </div>
 </template>
 
