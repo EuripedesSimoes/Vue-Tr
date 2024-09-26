@@ -1,17 +1,20 @@
 <template>
   <div>a</div>
   <TheHeader></TheHeader>
+  <TheHeader11></TheHeader11>
   
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue'
+import TheHeader11 from './components/TheHeader11.vue';
 
 export default {
   name: 'App',
   components: {
     //HelloWorld
-    TheHeader
+    TheHeader,
+    TheHeader11
   }
 }
 </script>
