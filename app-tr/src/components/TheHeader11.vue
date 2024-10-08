@@ -1,6 +1,8 @@
 <template>
+    <hr>
+    <hr>
     <div>
-        <input type="text" v-model="nome">
+        <label for="nombre">nombre: </label><input type="text" id="nombre" v-model="nome">
         {{ nome }}
     </div>
 </template>
