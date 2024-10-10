@@ -46,6 +46,7 @@
     <div>
         <input type="text" v-model="fullname">
         Jon Snow + {{ fullname }}
+        <button @click="clique">CLique</button>
     </div>
 
 </template>
@@ -89,15 +90,27 @@ export default {
         fullname() {
             return `${this.userName.f_name} ${this.userName.l_name}`
         }
+    },
+    methods: {
+        clique() {
+            console.log(this.computed)
+        }
     }
 }
 </script>
 
 <style>
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}*/
+
 .red {
-    width:  150px;
-    height: 150px;
+    width:  70px;
+    height: 70px;
     background-color: red;
+    font-size: 20;
 }
 
 </style>
