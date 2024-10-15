@@ -11,6 +11,11 @@
         </div>
         
     </div>
+    <div>
+        <slot name="title"></slot>
+        <slot name="desc"></slot>
+        <slot></slot>
+    </div>
 </template>
 
 <script>

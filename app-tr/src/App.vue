@@ -1,7 +1,14 @@
 <template>
   <div>a</div>
   <TheHeader></TheHeader>
-  <TheHeader11></TheHeader11>
+  <TheHeader11>
+    <template v-slot:title>
+      <h1>Slot 1</h1>
+    </template>
+    <template v-slot:desc>
+      <h2>Slot 2</h2>
+    </template>
+  </TheHeader11>
   
 </template>
 
