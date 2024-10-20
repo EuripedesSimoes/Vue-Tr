@@ -8,7 +8,11 @@
  <div v-show="nome2Show">
   {{ nome2 }}
  </div>
- <div></div>
+
+<div v-bind:class="{'reau': reauconf, 'barca':barconf}">
+reau ou barca
+ </div><br>
+
   <TheOne></TheOne>
 </template>
 
@@ -28,12 +32,21 @@ export default {
       nome1: 'Cleitu Rasta',
       nome2: 'Cabeça de Gelo',
       nome1Show: true,
-      nome2Show: false
+      nome2Show: false,
+      reauconf: true,
+      barconf: false
     }
   }
 }
 </script>
 
 <style>
-
+.reau {
+  color: gray;
+  font-size: 40px;
+}
+.barca {
+  color: red;
+  font-size: 40px;
+}
 </style>
