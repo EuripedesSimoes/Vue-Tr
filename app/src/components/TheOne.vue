@@ -22,7 +22,6 @@
             <br>
             <hr style="width: 200px;">
             {{ newslet }}
-            alert('n')
         </div>
     </div>
 </template>

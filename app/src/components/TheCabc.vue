@@ -1,14 +1,17 @@
 <template>
-    <div>
-        <p>Cabecalho 2</p>
-    </div>
+    <main class="main">
+        <div>
+            <p>Cabecalho 2</p>
+        </div>
 
-    <div v-if="user === 'adm'" >
-        <p>usuario é {{ user }}</p>
-    </div>
-    <div v-else>
-        <p>usuario esta como {{ user }}</p>
-    </div>
+        <div v-if="user === 'adm'" >
+            <p>usuario é {{ user }}</p>
+        </div>
+        <div v-else>
+            <p>usuario esta como {{ user }}</p>
+            <p>{{ user }} leva salve</p>
+        </div>
+    </main>
 
 </template>
 
@@ -18,7 +21,7 @@ export default {
     data() {
         return {
 
-user: 'am'
+user: 'adm'
             
         }
     }
@@ -27,6 +30,8 @@ user: 'am'
 </script>
 
 <style>
+
+
 p {
     color: lightgreen;
 }
