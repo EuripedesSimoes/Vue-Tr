@@ -2,11 +2,12 @@
     <main class="main">
         <div>
             <form class="form_name">
-                <input type="text" placeholder="Digite seu nome" class="inputs required" @input="nameValidate">
+                <input type="text" class="inputs required" v-model="txt">
+                {{ txt }}
                 <span id="span_required" style="display: none;">Nome deve ter mais de 3 letras</span>
             </form>
             <form class="form_pass">
-                <input type="password" placeholder="Digite Sua senha" class="inputs required">
+                <input type="password" placeholder="Digite Sua senha">
                 <span id="span_required" style="display: none;">Senha deve ter 8 caracteres</span>
             </form>
         </div>
@@ -17,17 +18,19 @@
 export default {
     data() {
         return {
-            campos: document.querySelectorAll('.required'),
+            txt: '',
+            campos: document.querySelectorAll('.inputs required'),
             spanT: document.querySelectorAll('span_required'),
         }
     },
     methods: {
-        nameValidate(){
-            if (this.campos[0].value.length < 3) {
+       /* nameValidate(){
+            let camposV = this.campos
+            if (camposV[0].value.length < 3) {
                 console.log('a')
-                /*this.spanT.style.display = 'block'*/
+                this.spanT.style.display = 'block'
             }
-        }
+        }*/
 
     }
 }
