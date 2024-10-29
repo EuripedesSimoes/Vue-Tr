@@ -2,7 +2,7 @@
     <main class="main">
         <div>
             <form class="form_name">
-                <input type="text" class="inputs required" v-model="txt">
+                <input type="text" id="cu" v-model="txt" v-on:input="nameValidate">
                 {{ txt }}
                 <span id="span_required" style="display: none;">Nome deve ter mais de 3 letras</span>
             </form>
@@ -19,18 +19,26 @@ export default {
     data() {
         return {
             txt: '',
-            campos: document.querySelectorAll('.inputs required'),
-            spanT: document.querySelectorAll('span_required'),
+            campos: document.getElementById('cu'),
+            /*campos: document.querySelectorAll('.inputs required'),*/
+            spanT: document.getElementById('span_required'),
         }
     },
     methods: {
-       /* nameValidate(){
+        nameValidate(){
+            if (this.txt < 5)
+            {
+                console.log(this.txt)
+                this.spanT.style.display = 'block'
+            }
+            /*
+            console.log('entro')
             let camposV = this.campos
             if (camposV[0].value.length < 3) {
                 console.log('a')
                 this.spanT.style.display = 'block'
-            }
-        }*/
+            }*/
+        }
 
     }
 }
