@@ -2,13 +2,15 @@
     <main class="main">
         <div>
             <form class="form_name">
-                <input type="text" id="cu" v-model="txt" v-on:input="nameValidate">
+                <input type="text" id="cu" v-model="txt" v-on:input="nameValidate()">
                 {{ txt }}
                 <span id="span_required" style="display: none;">Nome deve ter mais de 3 letras</span>
             </form>
             <form class="form_pass">
                 <input type="password" placeholder="Digite Sua senha">
-                <span id="span_required" style="display: none;">Senha deve ter 8 caracteres</span>
+                <span id="span_required" style="display: flex;">Senha deve ter 8 caracteres</span>
+                <span id="span_required" :style="display" >Senha deve ter 8 caracteres</span>
+
             </form>
         </div>
     </main>
@@ -22,15 +24,20 @@ export default {
             campos: document.getElementById('cu'),
             /*campos: document.querySelectorAll('.inputs required'),*/
             spanT: document.getElementById('span_required'),
+            display: "display:none;"
         }
     },
     methods: {
         nameValidate(){
-            if (this.txt < 5)
-            {
-                console.log(this.txt)
-                this.spanT.style.display = 'block'
+            console.log(this.txt)
+            if (this.txt.length > 3){
+                this.display = 'display: flex;'
             }
+            
+            /*if (this.txt < 5)
+            {
+            this.spanT.setAttribute('id', 'span_required2')
+            }*/
             /*
             console.log('entro')
             let camposV = this.campos
@@ -69,4 +76,13 @@ export default {
 span {
     font-size: 12px;
 }
+
+#span_required {
+    display: none;
+
+}
+#span_required2 {
+    display: block;
+}
+
 </style>
