@@ -1,17 +1,27 @@
 <template>
     <main class="main">
-        <div>
+        <div class="div_main">
             <form class="form_name">
                 <input type="text" id="cu" v-model="txt" v-on:input="nameValidate()">
-                {{ txt }}
-                <span id="span_required" style="display: none;">Nome deve ter mais de 3 letras</span>
+                <span id="span_required" :style="display_Span" >Senha deve ter 8 caracteres</span>
             </form>
+
             <form class="form_pass">
                 <input type="password" placeholder="Digite Sua senha">
-                <span id="span_required" style="display: flex;">Senha deve ter 8 caracteres</span>
-                <span id="span_required" :style="display" >Senha deve ter 8 caracteres</span>
-
+                <span id="span_required" style="display: flex; color: red;">Senha deve ter 5 caracteres</span>
             </form>
+
+            <!--
+            <form>
+                <input type="text" placeholder="Digite Sua senha" v-model="ip3">
+                <span id="span_required" v-if="ip3.length = 0" style="display: none;"></span>
+                <span id="span_required" v-else-if="ip3.length < 5" style="display: flex; color: red;">Senha deve ter 5 caracteres</span>
+                <span id="span_required" v-else-if="ip3.length >= 5" style="display: flex; color: green;">Senha deve ter 5 caracteres</span>
+            </form>-->
+        </div>
+        <div>
+            <input type="radio" value="uc">cuz
+            <input type="radio" value="niz">in
         </div>
     </main>
 </template>
@@ -24,15 +34,22 @@ export default {
             campos: document.getElementById('cu'),
             /*campos: document.querySelectorAll('.inputs required'),*/
             spanT: document.getElementById('span_required'),
-            display: "display:none;"
+            display_Span: "display:none;",
+            ip3: '',
         }
     },
     methods: {
         nameValidate(){
             console.log(this.txt)
-            if (this.txt.length > 3){
-                this.display = 'display: flex;'
+
+            if (this.txt.length < 3){
+                this.display_Span = 'display: flex; color:red'
+                
             }
+            
+            else {
+                    this.display_Span = 'display: flex; color:green'
+                }
             
             /*if (this.txt < 5)
             {
@@ -62,16 +79,15 @@ export default {
     /*align-items: center;*/
     column-gap: 10px;
 }
-.form_name {
+.div_main > form {
+    padding: 10px;
+}
+
+.form_name, .form_pass, .form_pass2 {
     display: flex;
     flex-direction: column;
     /*font-size: 10px;
     column-gap: 10px;*/
-}
-.form_pass {
-    display: flex;
-    flex-direction: column;
-    /*column-gap: 10px;*/
 }
 span {
     font-size: 12px;
