@@ -25,6 +25,7 @@
             <input type="checkbox" v-model="cb3" value="3"> qqr coisa3
             {{ cb }} {{ cb2 }} {{ cb3 }}
         </div>
+        <button @click="json_api"></button>
     </main>
 </template>
 
@@ -55,8 +56,10 @@ export default {
                     /*this.spanT.innerText = 'Caracteres certos'*/
                 }
             
+        },
+        json_api(){
+            console.log(  )
         }
-
     }
 }
 
