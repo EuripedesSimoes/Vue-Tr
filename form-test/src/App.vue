@@ -1,15 +1,15 @@
 <template>
-  <TheForm></TheForm>
+  <FormEscalacao></FormEscalacao>
 </template>
 
 <script>
-import TheForm from './components/TheForm.vue';
+import FormEscalacao from './components/TheForm.vue';
 
 
 export default {
   name: 'App',
   components: {
-    TheForm
+    FormEscalacao
   }
 }
 </script>

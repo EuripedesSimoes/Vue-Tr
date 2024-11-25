@@ -18,6 +18,12 @@
             <input type="radio" value="password" v-model="txt">password
             <p>Você selecionou <br> {{ txt }}</p>
             <br>
+            <select name="nomesForm" id="nomesForm">
+                <option v-for="nom in nomesJS" :key="nom.id" :value="nom.tipo">
+                    {{ nom.tipo }}
+                </option>
+                <p>Voce selecionou: {{ nom.tipo }}</p>
+            </select>
         </div>
         <div class="div_cb">
             <input type="checkbox" v-model="cb" value="1"> qqr coisa
@@ -25,12 +31,20 @@
             <input type="checkbox" v-model="cb3" value="3"> qqr coisa3
             {{ cb }} {{ cb2 }} {{ cb3 }}
         </div>
-        <button @click="json_api"></button>
+        {{ nomesForm }}
+        <br>
+        <br>
+        {{ profissaForm }}
+        <br>
+        <br>
+        {{ escalForm }}
+        <button @click="json_api">Botao do json server</button>
     </main>
 </template>
 
 <script>
 export default {
+    name: "FormEscalacao",
     data() {
         return {
             txt: '',
@@ -40,6 +54,12 @@ export default {
             spanT: document.getElementById('span_required'),
             display_Span: "display:none;",
             ip3: '',
+            nomesJS: null,
+            profissaJS: null,
+            escalJS: null,
+            nom: null,
+            profissa: null,
+            escal: null
         }
     },
     methods: {
@@ -57,9 +77,19 @@ export default {
                 }
             
         },
-        json_api(){
-            console.log(  )
+        async json_api(){
+            const req = await fetch("http://localhost:3000/pessoas");
+            const req2 = await fetch("http://localhost:3000/futReserva");
+            const data = await req.json();
+            const data2 = await req2.json();
+
+            this.nomesJS = data.nomes;
+            this.profissaJS = data.profissao;
+            this.escalJS = data2.escalacao;
         }
+    },
+    mounted() {
+        this.json_api()
     }
 }
 
@@ -79,11 +109,10 @@ div {
 .main {
     background-color: rgb(241, 192, 132);
     width: 500px;
-    height: 500px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10px;
     flex-direction: column;
 }
 
@@ -112,6 +141,10 @@ span {
 }
 #span_required2 {
     display: block;
+}
+
+div{
+    height: 130px;
 }
 
 </style>
