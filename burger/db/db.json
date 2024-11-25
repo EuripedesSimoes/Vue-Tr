@@ -1,0 +1,14 @@
+{
+    "ingredientes": {
+        "pao": [
+            {
+               "id": 0,
+               "tipo": "brioche"
+            },
+            {
+                "id": 1,
+                "tipo": "frances"
+            }
+        ]
+    }
+}
