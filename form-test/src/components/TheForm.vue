@@ -18,12 +18,6 @@
             <input type="radio" value="password" v-model="txt">password
             <p>Você selecionou <br> {{ txt }}</p>
             <br>
-            <select name="nomesForm" id="nomesForm">
-                <option v-for="nom in nomesJS" :key="nom.id" :value="nom.tipo">
-                    {{ nom.tipo }}
-                </option>
-                <p>Voce selecionou: {{ nom.tipo }}</p>
-            </select>
         </div>
         <div class="div_cb">
             <input type="checkbox" v-model="cb" value="1"> qqr coisa
@@ -31,14 +25,6 @@
             <input type="checkbox" v-model="cb3" value="3"> qqr coisa3
             {{ cb }} {{ cb2 }} {{ cb3 }}
         </div>
-        {{ nomesForm }}
-        <br>
-        <br>
-        {{ profissaForm }}
-        <br>
-        <br>
-        {{ escalForm }}
-        <button @click="json_api">Botao do json server</button>
     </main>
 </template>
 
@@ -53,13 +39,7 @@ export default {
             cb3: '',
             spanT: document.getElementById('span_required'),
             display_Span: "display:none;",
-            ip3: '',
-            nomesJS: null,
-            profissaJS: null,
-            escalJS: null,
-            nom: null,
-            profissa: null,
-            escal: null
+            ip3: ''
         }
     },
     methods: {
@@ -76,26 +56,13 @@ export default {
                     /*this.spanT.innerText = 'Caracteres certos'*/
                 }
             
-        },
-        async json_api(){
-            const req = await fetch("http://localhost:3000/pessoas");
-            const req2 = await fetch("http://localhost:3000/futReserva");
-            const data = await req.json();
-            const data2 = await req2.json();
-
-            this.nomesJS = data.nomes;
-            this.profissaJS = data.profissao;
-            this.escalJS = data2.escalacao;
         }
-    },
-    mounted() {
-        this.json_api()
     }
 }
 
 </script>
 
-<style>
+<style scoped>
 *{
     margin: 0;
     padding: 0;
@@ -128,8 +95,9 @@ div {
 }
 .div_cb{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 span {
     font-size: 12px;
