@@ -1,17 +1,16 @@
 <template>
-  <FormEscalacao></FormEscalacao>
   <TheForm2></TheForm2>
 </template>
 
-<script>
-import FormEscalacao from './components/TheForm.vue';
+<script>/*
+import FormEscalacao from './components/TheForm.vue';*/
 import TheForm2 from './components/TheForm2.vue';
 
 
 export default {
   name: 'App',
   components: {
-    FormEscalacao,
+   /* FormEscalacao,*/
     TheForm2
   }
 }
