@@ -21,7 +21,6 @@ export default {
 
             //Transforma os dados em json
             const data = await req.json()
-            console.log(data)
 
             //transfere os dados para as variaveis criadas
             this.beefs = data.carnes
