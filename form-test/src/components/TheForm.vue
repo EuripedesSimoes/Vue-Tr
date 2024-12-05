@@ -25,12 +25,12 @@
             <input type="checkbox" v-model="cb3" value="3"> qqr coisa3
             {{ cb }} {{ cb2 }} {{ cb3 }}
         </div>
-        <button @click="json_api"></button>
     </main>
 </template>
 
 <script>
 export default {
+    name: "FormEscalacao",
     data() {
         return {
             txt: '',
@@ -39,7 +39,7 @@ export default {
             cb3: '',
             spanT: document.getElementById('span_required'),
             display_Span: "display:none;",
-            ip3: '',
+            ip3: ''
         }
     },
     methods: {
@@ -56,16 +56,13 @@ export default {
                     /*this.spanT.innerText = 'Caracteres certos'*/
                 }
             
-        },
-        json_api(){
-            console.log(  )
         }
     }
 }
 
 </script>
 
-<style>
+<style scoped>
 *{
     margin: 0;
     padding: 0;
@@ -79,11 +76,10 @@ div {
 .main {
     background-color: rgb(241, 192, 132);
     width: 500px;
-    height: 500px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10px;
     flex-direction: column;
 }
 
@@ -99,8 +95,9 @@ div {
 }
 .div_cb{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 span {
     font-size: 12px;
@@ -112,6 +109,10 @@ span {
 }
 #span_required2 {
     display: block;
+}
+
+div{
+    height: 130px;
 }
 
 </style>
