@@ -1,14 +1,122 @@
-{
-    "ingredientes": {
-        "pao": [
-            {
-               "id": 0,
-               "tipo": "brioche"
-            },
-            {
-                "id": 1,
-                "tipo": "frances"
-            }
-        ]
-    }
+{ "pessoas": { 
+    "nomes": [
+        {   
+            "nome": "calvos",
+            "id": 0,
+            "tipo": "branco"
+        },
+        {
+            "nome": "japonico",
+            "id": 1,
+            "tipo": "asiatico"
+        },
+        {
+            "nome": "djaws",
+            "id": 2,
+            "tipo": "sharknado"
+        }
+    ],
+    "profissao": [
+        {
+            "vagabundo": "calvos"
+        },
+        {
+            "fazendeiro": "djaws"
+        },
+        {
+            "marketing": "japonico"
+        }
+    ]
+},
+
+"futReserva":{
+    "escalacao": [
+        {
+            "4-3-3":"nipo-djaws-calvos"
+        },
+        {
+            "4-2-4":"djaws-calvos-nipo"
+        }
+    ]
+},
+
+"ingredientes": {
+      "paes": [
+        {
+          "id": 1,
+          "tipo": "Italiano Branco"
+        },
+        {
+          "id": 2,
+          "tipo": "Frances"
+        },
+        {
+          "id": 3,
+          "tipo": "Pao de Batata"
+        },
+        {
+          "id": 4,
+          "tipo": "Integral"
+        }
+      ],
+      "carnes": [
+        {
+          "id": 1,
+          "tipo": "Maminha"
+        },
+        {
+          "id": 2,
+          "tipo": "Alcatra"
+        },
+        {
+          "id": 3,
+          "tipo": "Picanha"
+        },
+        {
+          "id": 4,
+          "tipo": "Veggie burger"
+        }
+      ],
+      "opcionais": [
+        {
+          "id": 1,
+          "tipo": "Bacon"
+        },
+        {
+          "id": 2,
+          "tipo": "Cheddar"
+        },
+        {
+          "id": 3,
+          "tipo": "Salame"
+        },
+        {
+          "id": 4,
+          "tipo": "Tomate"
+        },
+        {
+          "id": 4,
+          "tipo": "Cebola roxa"
+        },
+        {
+          "id": 4,
+          "tipo": "Pepino"
+        }
+      ]
+    },
+"status": [
+      {
+        "id": 1,
+        "tipo": "Solicitado"
+      },
+      {
+        "id": 2,
+        "tipo": "Em produção"
+      },
+      {
+        "id": 3,
+        "tipo": "Finalizado"
+      }
+    ],
+"burgers": []
 }

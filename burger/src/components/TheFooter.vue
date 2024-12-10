@@ -1,5 +1,5 @@
 <template>
-    <div>cu</div>
+    <div>TheFooter string</div>
 </template>
 
 <script>
