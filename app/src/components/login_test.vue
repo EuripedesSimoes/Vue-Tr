@@ -33,6 +33,7 @@ data () {
 
 methods: {
         cl(){
+            /*let name*/
             let nome = document.getElementById('nome')
             let par = document.getElementById('par')
             par.innerText = nome.value+","
