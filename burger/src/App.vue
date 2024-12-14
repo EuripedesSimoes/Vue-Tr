@@ -1,11 +1,10 @@
 <template>
-  <nav>
     <!--
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
     -->
-  </nav>
   <router-view/>
+  <NavBar></NavBar>
   <Footer_1></Footer_1>
   <Ingredientes_1></Ingredientes_1>
 </template>
@@ -14,6 +13,7 @@
 <script>
 import Footer_1 from "./components/TheFooter.vue";
 import Ingredientes_1 from "./components/Ingredients.vue"
+import NavBar from "./components/NavBar.vue";
 
 export default{
   name:"App",
@@ -25,7 +25,7 @@ export default{
   components: {
     Footer_1,
     Ingredientes_1,
-
+    NavBar
   }
 }
 </script>
