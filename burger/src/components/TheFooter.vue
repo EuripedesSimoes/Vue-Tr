@@ -1,5 +1,5 @@
 <template>
-    <div>TheFooter string</div>
+    <div class="footer_container">TheFooter string</div>
 </template>
 
 <script>
@@ -10,8 +10,18 @@ export default {
 </script>
 
 <style scoped>
-div {
-    height: 400px;
+*{
+margin: 0;
+padding: 0;
+box-sizing: 0;
+}
+
+.footer_container{
+    /*display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+*/
+    height: 100px;
     width: auto;
     background-color: rgb(13, 31, 25);
 }
