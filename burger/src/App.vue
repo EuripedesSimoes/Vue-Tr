@@ -6,6 +6,7 @@
   <router-view/>
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar></NavBar>
+    <Main_Menu></Main_Menu>
     <Ingredients></Ingredients>
     <TheFooter class="footer_container"></TheFooter>
   </body>
@@ -17,6 +18,7 @@
 import NavBar from './components/NavBar.vue';
 import Ingredients from './components/Ingredients.vue';
 import TheFooter from './components/TheFooter.vue';
+import Main_Menu from './components/Main.vue';
 
 
 export default{
@@ -28,8 +30,9 @@ export default{
   },
   components: {
     NavBar,
+    Main_Menu,
     TheFooter,
-    Ingredients
+    Ingredients,
   },
   /*computed: {
     backgroundStyle() 
@@ -53,6 +56,10 @@ body {
   width: 100vw;
   height: 100vh;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  backdrop-filter:blur(3.5px);
+  -webkit-backdrop-filter: blur( 3.5px );
   /*
     background-image: url('https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg')
     */
