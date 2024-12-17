@@ -96,7 +96,7 @@ display: flex;
 column-gap: 30px;
 }
 .ul_nav li {
-font-size: 22px;
+font-size: 28px;
 text-decoration: none;
 list-style: none;
 display: flex;

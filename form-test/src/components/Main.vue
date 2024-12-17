@@ -9,7 +9,7 @@
             <p>Pizza</p>
         </div>
         <div class="prod" id="prod_hotdog">
-            <img src="https://cdn-icons-png.flaticon.com/512/3480/3480814.png" alt="">
+            <img src="../assets/hotdog_512px.png" alt="">
             <p>Hotdog</p>
         </div>
     </div>
@@ -20,7 +20,7 @@ export default{
     name:'Main_Menu',
     data(){
         return{
-            blur: '5px'
+            /*blur: '5px'*/
 
         }
     },
@@ -56,7 +56,7 @@ export default{
     height: 54%;
     width: 28%;
     background-color: rgba(58, 58, 58, 0.575);
-    border: 3px solid #b9b9b9;
+    border: 4px solid #b9b9b9;
     border-radius: 10px;
     display: flex;
     align-items: center;

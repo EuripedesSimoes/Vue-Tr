@@ -8,6 +8,7 @@
   <NavBar></NavBar>
 
   <Main_Menu></Main_Menu>
+  <FooterA></FooterA>
   <!--
     <TheForm></TheForm>
     <TheForm2></TheForm2>
@@ -19,11 +20,13 @@
 
 <script>
 import NavBar from './components/Navbar.vue';
+
 /*
 import TheForm from './components/TheForm.vue';
 import TheForm2 from './components/TheForm2.vue';
 */
 import Main_Menu from './components/Main.vue'
+import FooterA from './components/MainFooter.vue';
 
 
 export default{
@@ -36,6 +39,7 @@ data(){
 components: {
   NavBar,
   Main_Menu,
+  FooterA
 /*
   TheForm,
   TheForm2,
