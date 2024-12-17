@@ -47,6 +47,10 @@ components: {
 
 
 <style >
+:root {
+  --pg1: #dbdbdb;
+  --pg2: #42b983;
+}
 *{
   margin: 0;
   padding: 0;
@@ -66,30 +70,17 @@ body {
     background-image: url('https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg')
       */
     }
+  
 
-#app {
-font-family: Avenir, Helvetica, Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-align: center;
-color: #2c3e50;
-}
+  
+    /*
+    #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    }
+    */
 
-nav {
-padding: 30px;
-
-a {
-  font-weight: bold;
-  color: #2c3e50;
-
-  &.router-link-exact-active {
-    color: #42b983;
-  }
-}
-}
-body .footer_container {
-
-  justify-content: flex-end;
-  align-items: flex-end;
-}
 </style>
