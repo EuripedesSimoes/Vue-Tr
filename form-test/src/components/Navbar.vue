@@ -3,15 +3,23 @@
 
 <nav class="nav_bar">
     <div class="nav_logo">
-        <img v-bind:src="logo_burg">
+        <img src="../assets/bg-one_logo.png">
     </div>
     
     <div class="nav_list">
         <ul class="ul_nav">
-            <li id="li_home"><a href="http://localhost:8080/#/">Home</a></li>
-            <li id="li_del"><a href="">Delivery</a></li>
-            <li id="li_menu"><a href="">Menu</a></li>
-            <li id="li_cont"><a href="">Contato</a></li>
+            <li id="li_home">
+                <a href="http://localhost:8080/#/">Home</a>
+            </li>
+            <li id="li_del">
+                <a href="">Delivery</a>
+            </li>
+            <li id="li_menu">
+                <a href="">Menu</a>
+            </li>
+            <li id="li_cont">
+                <a href="">Contato</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -27,7 +35,8 @@ export default {
 data() {
     
     return {
-        logo_burg: 'https://yata-apix-98fd6fda-dce0-4882-85d9-05d63ab44b59.s3-object.locaweb.com.br/bc65206edd5d4549a4d75657d5e018e4.png'
+        logo_burg: 'https://yata-apix-98fd6fda-dce0-4882-85d9-05d63ab44b59.s3-object.locaweb.com.br/bc65206edd5d4549a4d75657d5e018e4.png',
+        logo_burg_NEW: '../assets/bg-one_logo.png',
     }
     },
 
@@ -107,7 +116,7 @@ justify-content: center;
 #li_home, #li_menu{
     background-color: #FF9900;
     height: 1.9em;
-    width: 3.6em;
+    width: auto;
     border-radius: 0.3em;
     /*
     transition: transform 0.5s, background-color 0.7s, color 1.4s;
@@ -119,15 +128,16 @@ justify-content: center;
 #li_del, #li_cont{
     background-color: #FF9900;
     height: 1.9em;
-    width: 4.3em;
+    width: auto;
     border-radius: 0.3em;
     transition: all 0.4s;
     transition-duration: 0.4s; /* depois que o mouse sair */
 }
 
 a{
+    padding: 0 10px;
     color: black;
-    font-size: 25px;
+    font-size: 36px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: transform;
