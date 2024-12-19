@@ -25,6 +25,7 @@
             <input type="checkbox" v-model="cb3" value="3"> qqr coisa3
             {{ cb }} {{ cb2 }} {{ cb3 }}
         </div>
+        
     </main>
 </template>
 
@@ -63,6 +64,16 @@ export default {
 </script>
 
 <style scoped>
+/*
+.divteste {
+    height: 480px;
+    width: 480px;
+    background-color: black;
+    backdrop-filter: sepia(90%);
+    color: white;
+}
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -74,7 +85,7 @@ div {
     border: 1px solid black;
 }
 .main {
-    background-color: rgb(241, 192, 132);
+    background-color: rgba(250, 183, 100, 0.637);
     width: 500px;
     height: auto;
     display: flex;
