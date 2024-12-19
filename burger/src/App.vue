@@ -3,14 +3,15 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
     -->
-  <router-view/>
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar></NavBar>
+    <RouterLink to="/peidos">Peidos</RouterLink>
     <Main_Menu></Main_Menu>
     <Ingredients></Ingredients>
     <TheFooter class="footer_container"></TheFooter>
   </body>
     
+  <router-view/>
 </template>
 
 çucccc
