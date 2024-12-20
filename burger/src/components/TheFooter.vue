@@ -51,7 +51,7 @@ box-sizing: 0;
     justify-content: flex-end;
     align-items: flex-end;
 */
-    height: 600px;
+    height: 200px;
     width: auto;
     background-color: rgb(13, 31, 25);
 }

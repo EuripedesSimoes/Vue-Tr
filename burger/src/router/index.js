@@ -31,6 +31,11 @@ const routes = [
   path: '/btn3',
   name: 'bnt3',
   component: () => import('../views/Btn3View.vue')
+  },
+  {
+    path: '/BurgerPage',
+    name: 'BurgerPage',
+    component: () => import('../views/BurgerPageView.vue')
   }
 
 

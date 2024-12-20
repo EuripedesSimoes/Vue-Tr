@@ -1,25 +1,19 @@
 <template>
-    <!--
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    -->
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
     <RouterLink to="/peidos" v-on:click="peidos">Peidos</RouterLink>
-    <Main_Menu></Main_Menu>
+    <Main_Menu id="mn"></Main_Menu>
     <Ingredients></Ingredients>
     <TheFooter class="footer_container"></TheFooter>
   </body>
-    
-  <router-view/>
 </template>
 
-çucccc
+çuccccu
 <script>
 import NavBar from './components/NavBar.vue';
+import Main_Menu from './components/Main.vue';
 import Ingredients from './components/Ingredients.vue';
 import TheFooter from './components/TheFooter.vue';
-import Main_Menu from './components/Main.vue';
 
 
 export default{
@@ -37,8 +31,8 @@ export default{
   },
   methods:{
     peidos (){
-      const nav_bar = document.querySelector('#NavBar')
-      nav_bar.style.display = "none"
+      const mn = document.querySelector('#mn')
+      mn.style.display = "none"
     }
   }
 }
@@ -58,9 +52,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  backdrop-filter:blur(3.5px);
-  -webkit-backdrop-filter: blur( 3.5px );
+  background-attachment: fixed;
   /*
+    backdrop-filter:blur(3.5px);
     background-image: url('https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg')
     */
 }

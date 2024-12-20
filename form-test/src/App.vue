@@ -1,8 +1,4 @@
 <template>
-  <!--
-  <router-link to="/">Home</router-link> |
-  <router-link to="/about">About</router-link>
-  -->
 <router-view/>
 <body :style="{'background-image': 'url('+body_img+')','backdrop-filter':'blur(3.5px)'} ">
   <NavBar></NavBar>
@@ -10,9 +6,9 @@
   <Main_Menu></Main_Menu>
   <FooterA></FooterA>
   <!--
-    <TheForm></TheForm>
-    <TheForm2></TheForm2>
-    <TheFooter class="footer_container"></TheFooter>
+  <TheForm></TheForm>
+  <TheForm2></TheForm2>
+  <TheFooter class="footer_container"></TheFooter>
   -->
 </body>
   
@@ -20,13 +16,12 @@
 
 <script>
 import NavBar from './components/Navbar.vue';
-
+import Main_Menu from './components/Main.vue'
+import FooterA from './components/MainFooter.vue';
 /*
 import TheForm from './components/TheForm.vue';
 import TheForm2 from './components/TheForm2.vue';
 */
-import Main_Menu from './components/Main.vue'
-import FooterA from './components/MainFooter.vue';
 
 
 export default{
