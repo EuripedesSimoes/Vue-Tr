@@ -4,8 +4,8 @@
     <router-link to="/about">About</router-link>
     -->
   <body :style="{'background-image': 'url('+body_img+')'} ">
-    <NavBar></NavBar>
-    <RouterLink to="/peidos">Peidos</RouterLink>
+    <NavBar id="NavBar"></NavBar>
+    <RouterLink to="/peidos" v-on:click="peidos">Peidos</RouterLink>
     <Main_Menu></Main_Menu>
     <Ingredients></Ingredients>
     <TheFooter class="footer_container"></TheFooter>
@@ -35,13 +35,12 @@ export default{
     TheFooter,
     Ingredients,
   },
-  /*computed: {
-    backgroundStyle() 
-    { return { 
-      backgroundImage: `url(${this.body_img})` 
-    }; 
+  methods:{
+    peidos (){
+      const nav_bar = document.querySelector('#NavBar')
+      nav_bar.style.display = "none"
+    }
   }
-  }*/
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
-    <div class="peidos">
-        Aba de pedids
+    <div class="btn2">
+        clicou no botao 2
     </div>
 </template>
 
@@ -10,10 +10,10 @@
 </script>
 
 <style>
-.peidos {
+.btn2  {
     margin: 0 auto;
-    background-color: red;
-    height: 300px;
-    width: 700px;
+    background-color: green;
+    height: 100px;
+    width: 200px;
 }
 </style>

@@ -16,7 +16,24 @@ const routes = [
     path: '/peidos',
     name: 'Pedidoos',
     component: () => import('../views/PedidosView.vue')
+  },
+  {
+  path: '/btn1',
+  name: 'bnt1',
+  component: () => import('../views/Btn1View.vue')
+  },
+  {
+  path: '/btn2',
+  name: 'bnt2',
+  component: () => import('../views/Btn2View.vue')
+  },
+  {
+  path: '/btn3',
+  name: 'bnt3',
+  component: () => import('../views/Btn3View.vue')
   }
+
+
 ]
 
 const router = createRouter({
