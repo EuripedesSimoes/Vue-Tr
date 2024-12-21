@@ -6,10 +6,12 @@
       
       <RouterLink to="/burgerPage" >
         <img src="assets/hamburger_128px.png" alt="">
-         <burgerREPRESENT></burgerREPRESENT>
+         <REP_burger></REP_burger>
       </RouterLink>
 
-      <RouterLink to="/pizzaPage">pizzaPage</RouterLink>
+      <RouterLink to="/pizzaPage">
+        <REP_pizza></REP_pizza>
+      </RouterLink>
 
       <RouterLink to="/hotPage">hotPage</RouterLink>
     </div>
@@ -28,7 +30,9 @@ import NavBar from './components/NavBar.vue';
 // import Main_Menu2 from './components/Main2.vue';
 import Ingredients from './components/Ingredients.vue';
 // import TheFooter from './components/TheFooter.vue';
-import burgerREPRESENT from './components/burgerREPRESENT.vue';
+import REP_burger from './components/REP_burger.vue';
+import REP_pizza from './components/REP_pizza.vue';
+
 
 
 export default{
@@ -44,7 +48,8 @@ export default{
     // Main_Menu2,
     // TheFooter,
     Ingredients,
-    burgerREPRESENT,
+    REP_burger,
+    REP_pizza,
   },
   methods:{
     peidos (){
@@ -106,6 +111,47 @@ body .footer_container {
 
     justify-content: flex-end;
     align-items: flex-end;
+
+}
+
+
+.prod{
+    height: 54%;
+    width: 28%;
+    background-color: rgba(58, 58, 58, 0.575);
+    border: 4px solid #b9b9b9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform;
+    transition-duration: 0.6s; /*Na volta, quando o mouse sair do hover*/
+}
+.prod:hover{
+    cursor: pointer;
+    transition: 1.8s; /*Para não ficar atrás dos 1.5s da imagem */
+    transform: scale(1.35);
+    background-color: rgba(58, 58, 58, 0.918);
+    img {
+        
+    transform: rotate(360deg) scale(1.3);
+    transition: 1.5s;
+    filter: drop-shadow(5px 5px 10px black);
+    }
+    /*
+    div {
+        flex-wrap: wrap;
+    }
+        */
+    p {
+        
+        font-family: "Playwrite IT Trad", cursive;
+        transform: scale(1.7, 1.5);
+        font-weight: bold;
+        color:  #dbdbdb;
+        transition: transform 0.5s, background-color 0.7s, color 1.4s;
+        filter: drop-shadow(5px 5px 3px black);
+    }
 
 }
 </style>
