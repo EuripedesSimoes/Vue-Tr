@@ -1,17 +1,17 @@
 <template>
     <div>
-
+        PIZZAPOHA pagina aberta
     </div>
 </template>
 
 <script>
 </script>
 
-<style>
+<style scoped>
 div {
     margin: 0 auto;
-    height: 80vh;
-    width: 80vw;
+    height: 500px;
+    width: 500px;
     background-color: rgba(245, 245, 220, 0.699);
 }
 </style>

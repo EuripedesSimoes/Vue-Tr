@@ -1,19 +1,34 @@
 <template>
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
-    <RouterLink to="/peidos" v-on:click="peidos">Peidos</RouterLink>
-    <Main_Menu id="mn"></Main_Menu>
+    <RouterLink to="/peidos" >Pedios</RouterLink>
+    <div class="linkPages">
+      
+      <RouterLink to="/burgerPage" >
+        <img src="assets/hamburger_128px.png" alt="">
+         <burgerREPRESENT></burgerREPRESENT>
+      </RouterLink>
+
+      <RouterLink to="/pizzaPage">pizzaPage</RouterLink>
+
+      <RouterLink to="/hotPage">hotPage</RouterLink>
+    </div>
+    <RouterView/>
+    <!-- <Main_Menu2 id="man"></Main_Menu2> -->
+    <!-- <Main_Menu id="mn"></Main_Menu> -->
     <Ingredients></Ingredients>
-    <TheFooter class="footer_container"></TheFooter>
+    <!-- <TheFooter class="footer_container"></TheFooter> -->
   </body>
 </template>
 
 çuccccu
 <script>
 import NavBar from './components/NavBar.vue';
-import Main_Menu from './components/Main.vue';
+// import Main_Menu from './components/Main.vue';
+// import Main_Menu2 from './components/Main2.vue';
 import Ingredients from './components/Ingredients.vue';
-import TheFooter from './components/TheFooter.vue';
+// import TheFooter from './components/TheFooter.vue';
+import burgerREPRESENT from './components/burgerREPRESENT.vue';
 
 
 export default{
@@ -25,13 +40,15 @@ export default{
   },
   components: {
     NavBar,
-    Main_Menu,
-    TheFooter,
+    // Main_Menu,
+    // Main_Menu2,
+    // TheFooter,
     Ingredients,
+    burgerREPRESENT,
   },
   methods:{
     peidos (){
-      const mn = document.querySelector('#mn')
+      const mn = document.getElementById('#man')
       mn.style.display = "none"
     }
   }
@@ -41,6 +58,12 @@ export default{
 
 
 <style >
+.linkPages {
+  margin: 0 auto;
+  height: 700px;
+  width: 700px;
+  background-color: aliceblue;
+}
 *{
     margin: 0;
     padding: 0;

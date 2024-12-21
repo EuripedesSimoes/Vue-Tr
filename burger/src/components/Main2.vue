@@ -19,7 +19,7 @@
 
 <script>
 export default{
-    name:'Main_Menu',
+    name:'Main_Menu2',
     data(){
         return{
             /*blur: '5px'*/

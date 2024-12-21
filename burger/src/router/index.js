@@ -32,10 +32,25 @@ const routes = [
   name: 'bnt3',
   component: () => import('../views/Btn3View.vue')
   },
+  // {
+  //   path: '/BurgerPage',
+  //   name: 'BurgerPage',
+  //   component: () => import('../views/PageBurger.vue')
+  // },
   {
-    path: '/BurgerPage',
-    name: 'BurgerPage',
-    component: () => import('../views/BurgerPageView.vue')
+    path: '/burgerPage',
+    name: 'burgerPage',
+    component: () => import('../views/PageBurger.vue')
+  },
+  {
+    path: '/pizzaPage',
+    name: 'pizzaPage',
+    component: () => import('../views/PagePizza.vue')
+  },
+  {
+    path: '/hotPage',
+    name: 'hotPage',
+    component: () => import('../views/PageHotdog.vue')
   }
 
 

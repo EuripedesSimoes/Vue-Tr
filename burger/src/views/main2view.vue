@@ -2,7 +2,8 @@
     <RouterLink to="/BurgerPage">Página dos hamburgers</RouterLink>
 
     <div class="div_menu">
-        <div class="prod" id="prod_burger">
+        <RouterLink class="prod" id="prod_burger" to="/burgerpoha">burgerpoha</RouterLink>
+        <div >
             <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="">
             <p>Burger</p>
         </div>
@@ -19,7 +20,7 @@
 
 <script>
 export default{
-    name:'Main_Menu',
+    name:'Main_Menu2',
     data(){
         return{
             /*blur: '5px'*/

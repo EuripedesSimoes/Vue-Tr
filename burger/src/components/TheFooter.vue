@@ -9,7 +9,7 @@
         <RouterLink to="/btn2">Botao 2</RouterLink>
         <RouterLink to="/btn3">Botao 3</RouterLink>
     </div>
-    <router-view/>
+    <!-- <router-view/> -->
 </template>
 
 <script>
