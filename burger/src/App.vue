@@ -2,20 +2,27 @@
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
     <RouterLink to="/peidos" >Pedios</RouterLink>
+
+    <!-- Div dos ROUTER LINKS  -->
     <div class="linkPages">
       
-      <RouterLink to="/burgerPage" >
+      <!-- ROUTER LINK DOS BURGERS -->
+      <RouterLink to="/burgerPage" v-on:click="sumir">
         <img src="assets/hamburger_128px.png" alt="">
          <REP_burger></REP_burger>
       </RouterLink>
 
+      <!-- ROUTER LINK DAS PIZZAS -->
       <RouterLink to="/pizzaPage">
         <REP_pizza></REP_pizza>
       </RouterLink>
 
+      <!-- ROUTER LINK DOS HOTDOGS -->
       <RouterLink to="/hotPage">hotPage</RouterLink>
     </div>
     <RouterView/>
+
+
     <!-- <Main_Menu2 id="man"></Main_Menu2> -->
     <!-- <Main_Menu id="mn"></Main_Menu> -->
     <Ingredients></Ingredients>
@@ -55,6 +62,11 @@ export default{
     peidos (){
       const mn = document.getElementById('#man')
       mn.style.display = "none"
+    },
+    sumir(){
+      // const rl = document.querySelectorAll('RouterLink')
+      const lp = document.querySelector('.linkPages')
+      lp.style.display = 'none'
     }
   }
 }
@@ -66,8 +78,10 @@ export default{
 .linkPages {
   margin: 0 auto;
   height: 700px;
-  width: 700px;
+  width: 900px;
   background-color: aliceblue;
+  display: flex;
+
 }
 *{
     margin: 0;
@@ -116,12 +130,13 @@ body .footer_container {
 
 
 .prod{
-    height: 54%;
-    width: 28%;
+    height: auto;
+    width: 300px;
     background-color: rgba(58, 58, 58, 0.575);
     border: 4px solid #b9b9b9;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform;
