@@ -28,7 +28,7 @@ img:hover {
     filter: drop-shadow(5px 5px 10px black);
 }
 */
-#prod_burger {
+#prod_pizza {
     flex-direction: column;
     display: flex;
     justify-content: center;

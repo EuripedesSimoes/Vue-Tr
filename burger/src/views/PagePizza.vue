@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="linkPages">
+        <a href="">Voltar</a>
         PIZZAPOHA pagina aberta
     </div>
 </template>
@@ -8,10 +9,4 @@
 </script>
 
 <style scoped>
-div {
-    margin: 0 auto;
-    height: 500px;
-    width: 500px;
-    background-color: rgba(245, 245, 220, 0.699);
-}
 </style>

@@ -8,17 +8,18 @@
       
       <!-- ROUTER LINK DOS BURGERS -->
       <RouterLink to="/burgerPage" v-on:click="sumir">
-        <img src="assets/hamburger_128px.png" alt="">
          <REP_burger></REP_burger>
       </RouterLink>
 
       <!-- ROUTER LINK DAS PIZZAS -->
-      <RouterLink to="/pizzaPage">
+      <RouterLink to="/pizzaPage" v-on:click="sumir">
         <REP_pizza></REP_pizza>
       </RouterLink>
 
       <!-- ROUTER LINK DOS HOTDOGS -->
-      <RouterLink to="/hotPage">hotPage</RouterLink>
+      <RouterLink to="/hotPage" v-on:click="sumir">
+        <REP_hotdog></REP_hotdog>
+      </RouterLink>
     </div>
     <RouterView/>
 
@@ -37,9 +38,9 @@ import NavBar from './components/NavBar.vue';
 // import Main_Menu2 from './components/Main2.vue';
 import Ingredients from './components/Ingredients.vue';
 // import TheFooter from './components/TheFooter.vue';
-import REP_burger from './components/REP_burger.vue';
-import REP_pizza from './components/REP_pizza.vue';
-
+import REP_burger from './components/REP_Pages/REP_burger.vue';
+import REP_pizza from './components/REP_Pages/REP_pizza.vue';
+import REP_hotdog from './components/REP_Pages/REP_hotdog.vue';
 
 
 export default{
@@ -57,12 +58,13 @@ export default{
     Ingredients,
     REP_burger,
     REP_pizza,
+    REP_hotdog
   },
   methods:{
-    peidos (){
-      const mn = document.getElementById('#man')
-      mn.style.display = "none"
-    },
+    // peidos (){
+    //   const mn = document.getElementById('#man')
+    //   mn.style.display = "none"
+    // },
     sumir(){
       // const rl = document.querySelectorAll('RouterLink')
       const lp = document.querySelector('.linkPages')
@@ -78,10 +80,14 @@ export default{
 .linkPages {
   margin: 0 auto;
   height: 700px;
-  width: 900px;
+  width: 1000px;
   background-color: aliceblue;
   display: flex;
-
+  justify-content: center;
+  align-items: start;
+  column-gap: 10px;
+  /* flex-basis: 1 1 700px;
+  flex-wrap: wrap; */
 }
 *{
     margin: 0;
@@ -109,7 +115,7 @@ body {
   color: #2c3e50;
 }
 
-nav {
+/* nav {
   padding: 30px;
 
   a {
@@ -126,19 +132,16 @@ body .footer_container {
     justify-content: flex-end;
     align-items: flex-end;
 
-}
+} */
 
 
 .prod{
+    margin-top: 20px;
     height: auto;
     width: 300px;
     background-color: rgba(58, 58, 58, 0.575);
     border: 4px solid #b9b9b9;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: transform;
     transition-duration: 0.6s; /*Na volta, quando o mouse sair do hover*/
 }
