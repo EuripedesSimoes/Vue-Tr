@@ -4,8 +4,24 @@
             <a href="">Voltar</a>
             <p>Aba de pedids</p>
         </nav>
+
+
+
         <div class="div_lunch">
-            <div class="lunch">Lanche 1</div>
+            <div class="lunch">
+                <img src="../assets/hamburger_128px.png" alt="">
+                <p>X-Salada</p>
+                <ul>
+                    <li id="pao_lanche">Pão de Brioche</li>
+                    <li id="carne_lanche">Carne</li>
+                    <li id="salada_lanche">Salada</li>
+                </ul>
+                
+
+            </div>
+
+
+
             <div class="lunch">Lanche 2</div>
         </div>
     </main>
@@ -49,14 +65,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 30px;
 }
 .lunch{
     border-right: 3px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     background-color: wheat;
 }
 </style>
