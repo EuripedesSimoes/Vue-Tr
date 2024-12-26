@@ -1,7 +1,7 @@
 <template>
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
-    <RouterLink to="/peidos" >Pedios</RouterLink>
+    <RouterLink to="/peidos"  v-on:click="sumir" class="pedios">Pedios</RouterLink>
 
     <!-- Div dos ROUTER LINKS  -->
     <div class="linkPages">
@@ -77,6 +77,13 @@ export default{
 
 
 <style >
+.pedios {
+  
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
 .linkPages {
   margin: 0 auto;
   height: 700px;

@@ -40,17 +40,17 @@ const routes = [
   {
     path: '/burgerPage',
     name: 'burgerPage',
-    component: () => import('../views/PageBurger.vue')
+    component: () => import('../views/PageLunchs/PageBurger.vue')
   },
   {
     path: '/pizzaPage',
     name: 'pizzaPage',
-    component: () => import('../views/PagePizza.vue')
+    component: () => import('../views/PageLunchs/PagePizza.vue')
   },
   {
     path: '/hotPage',
     name: 'hotPage',
-    component: () => import('../views/PageHotdog.vue')
+    component: () => import('../views/PageLunchs/PageHotdog.vue')
   }
 
 
