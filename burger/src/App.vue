@@ -1,6 +1,9 @@
 <template>
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
+     <div id="post-container">
+      <button type="button" v-on:click="criarDiv">Criar div</button>
+     </div>
     <RouterLink to="/peidos"  v-on:click="sumir" class="pedios">Pedios</RouterLink>
 
     <!-- Div dos ROUTER LINKS  -->
@@ -28,9 +31,6 @@
     <!-- <Main_Menu id="mn"></Main_Menu> -->
     <Ingredients></Ingredients>
     <!-- <TheFooter class="footer_container"></TheFooter> -->
-     <div id="post-container">
-      <button type="button" v-on:click="criarDiv">Criar div</button>
-     </div>
   </body>
 </template>
 
@@ -75,7 +75,7 @@ export default{
 
       
     },
-    criarDiv(){
+    async criarDiv(){
       const postContainer = document.getElementById('post-container')
 
       const divteste = document.createElement('div')
@@ -88,6 +88,12 @@ export default{
 
       postContainer.appendChild(divteste)
 
+      const req = await fetch("http://localhost:3000/burgers")
+      const reqNew = await req.json()
+
+      console.log(reqNew)
+      // fazer as trocas de variaveis
+
     }
   }
 }
@@ -98,8 +104,8 @@ export default{
 <style >
 .divtst {
   background-color: green;
-  height: 30px;
-  width: 30px;
+  height: 220px;
+  width: 110px;
 
 }
 .pedios {
