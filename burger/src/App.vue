@@ -28,6 +28,9 @@
     <!-- <Main_Menu id="mn"></Main_Menu> -->
     <Ingredients></Ingredients>
     <!-- <TheFooter class="footer_container"></TheFooter> -->
+     <div id="post-container">
+      <button type="button" v-on:click="criarDiv">Criar div</button>
+     </div>
   </body>
 </template>
 
@@ -69,6 +72,22 @@ export default{
       // const rl = document.querySelectorAll('RouterLink')
       const lp = document.querySelector('.linkPages')
       lp.style.display = 'none'
+
+      
+    },
+    criarDiv(){
+      const postContainer = document.getElementById('post-container')
+
+      const divteste = document.createElement('div')
+      const p = document.createElement('p')
+
+      divteste.setAttribute('class','divtst')
+
+      p.innerText = 'DIV TETSE'
+      divteste.appendChild(p)
+
+      postContainer.appendChild(divteste)
+
     }
   }
 }
@@ -77,6 +96,12 @@ export default{
 
 
 <style >
+.divtst {
+  background-color: green;
+  height: 30px;
+  width: 30px;
+
+}
 .pedios {
   
   color: white;

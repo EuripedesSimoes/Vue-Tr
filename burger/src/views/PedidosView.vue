@@ -9,7 +9,7 @@
         <div class="div_lunch">
             <div class="lunch">
                 <div class="div_img">
-                    <img src="../assets/pedidos/pedidos_burger/x-salada.jpeg" alt="">
+                    <img class="imgFromLunch" src="../assets/pedidos/pedidos_burger/x-salada.jpeg" alt="">
                 </div>
                 <div class="div_desc">
                     <p>X-Salada</p>
