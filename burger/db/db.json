@@ -119,14 +119,22 @@
         "tipo": "Finalizado"
       }
     ],
-"burgers": [
+"burgers": {
+  "All_Burgers": [
       {
         "img_src": "../assets/pedidos/pedidos_burger/x-salada.jpeg",
         "id": 1,
         "nome": "x-salada",
         "pao": "brioche",
         "carne": "picanha"
-
+      },
+      {
+        "img_src": "../assets/pedidos/pedidos_burger/x-salada.jpeg",
+        "id": 2,
+        "nome": "x-burger",
+        "pao": "batata",
+        "carne": "angus"
       }
 ]
+}
 }

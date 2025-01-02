@@ -31,7 +31,8 @@
 
 
 
-            <div  id="post-container-final">
+            <div id="post-container-final">
+                <!-- v-for="burger in AllBurgers" :key="burger.id" -->
                 <!-- <p>Lanche 2</p> -->
             </div>
         </div>
@@ -44,10 +45,60 @@ export default {
     data(){
         return {
         //  img_src2: "./assetsViews/x-salada.jpeg"
+        img_src_final: null,
+        id_final: null,
+        nome_final: null,
+        pao_final: null,
+        carne_final: null
 
         }
     },
-    methods: {async cuz(){
+    methods: {
+    async cuz(){
+        const req_final = await fetch("http://localhost:3000/burgers")
+        const data = await req_final.json()
+
+        this.carne_final = data.All_Burgers
+        console.log(this.carne_final)
+    
+
+        //identifica o container para criar os elementos
+        const div2lunch = document.getElementById('post-container-final')
+        
+        
+        //criando os elementos de DIV e P ---- 1 DIV
+        const divContainerImg = document.createElement('div')
+        const img_brg = document.createElement('img')
+        
+        //criando os elementos de DIV e P ---- 2 DIV
+        const divContainerDesc = document.createElement('div')
+        const p = document.createElement('p')
+        p.innerText = 'DIV teste final'
+        const ul = document.createElement('ul')
+        const li = document.createElement('li')
+
+        //cuidando da IMG
+        // img.setAttribute('class', 'imgFromLunch')
+        img_brg.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
+        // img_brg.style.height = '100%'
+        // img_brg.style.width = '100%'
+
+        //colocando classes 'LUNCH' padrao nas DIVs criadas
+        div2lunch.className = 'div_Sec_lunch'
+        divContainerImg.className = 'div_img'
+        divContainerImg.appendChild(img_brg)
+        divContainerDesc.className = 'div_desc'
+
+        //Colocando texto no P e colocando o P dentro da DIV
+        divContainerDesc.appendChild(p)
+        ul.appendChild(li)
+        divContainerDesc.appendChild(ul)
+
+        //colocando a DIV criada dentro da DIV principal
+        div2lunch.appendChild(divContainerImg)
+        div2lunch.appendChild(divContainerDesc)
+
+    
     //   const postContainer = document.getElementById('post-container-final')
 
     //   const divteste = document.createElement('div')
@@ -64,45 +115,6 @@ export default {
     //   divteste.appendChild(p)
 
     //   postContainer.appendChild(divteste)
-
-    //identifica o container para criar os elementos
-    const div2lunch = document.getElementById('post-container-final')
-
-
-    //criando os elementos de DIV e P ---- 1 DIV
-    const divContainerImg = document.createElement('div')
-    const img_brg = document.createElement('img')
-
-    //criando os elementos de DIV e P ---- 2 DIV
-    const divContainerDesc = document.createElement('div')
-    const p = document.createElement('p')
-    p.innerText = 'DIV teste final'
-    const ul = document.createElement('ul')
-    const li = document.createElement('li')
-
-    //cuidando da IMG
-    // img.setAttribute('class', 'imgFromLunch')
-    img_brg.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
-    // img_brg.style.height = '100%'
-    // img_brg.style.width = '100%'
-
-    //colocando classes 'LUNCH' padrao nas DIVs criadas
-    div2lunch.className = 'div_Sec_lunch'
-    divContainerImg.className = 'div_img'
-    divContainerImg.appendChild(img_brg)
-    divContainerDesc.className = 'div_desc'
-
-    //Colocando texto no P e colocando o P dentro da DIV
-    divContainerDesc.appendChild(p)
-    ul.appendChild(li)
-    divContainerDesc.appendChild(ul)
-
-    //colocando a DIV criada dentro da DIV principal
-    div2lunch.appendChild(divContainerImg)
-    div2lunch.appendChild(divContainerDesc)
-
-
-
 
     }
     },
