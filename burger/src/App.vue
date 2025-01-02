@@ -2,7 +2,7 @@
   <body :style="{'background-image': 'url('+body_img+')'} ">
     <NavBar id="NavBar"></NavBar>
      <div id="post-container">
-      <button type="button" v-on:click="criarDiv">Criar div</button>
+      <button type="button" v-on:click="criarDivMain">Criar div</button>
      </div>
     <RouterLink to="/peidos"  v-on:click="sumir" class="pedios">Pedios</RouterLink>
 
@@ -75,37 +75,111 @@ export default{
 
       
     },
-    async criarDiv(){
+    async criarDivMain(){
       const postContainer = document.getElementById('post-container')
 
       const divteste = document.createElement('div')
       const p = document.createElement('p')
+      const img = document.createElement('img')
 
       divteste.setAttribute('class','divtst')
+      img.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
+      // img.style.height = '10px'
 
       p.innerText = 'DIV TETSE'
+      
+      divteste.appendChild(img)
       divteste.appendChild(p)
 
       postContainer.appendChild(divteste)
 
-      const req = await fetch("http://localhost:3000/burgers")
-      const reqNew = await req.json()
+      // const req = await fetch("http://localhost:3000/burgers")
+      // const reqNew = await req.json()
 
-      console.log(reqNew)
+      // console.log(reqNew)
       // fazer as trocas de variaveis
 
     }
-  }
+    // tudo(){
+    //   this.sumir()
+    //   this.cu()
+    // }
+
+// mounted() {
+//     this.criarDiv()
+// }
+  },
 }
 </script>
 
 
 
 <style >
+
+.div_Main_lunch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.div_Sec_lunch{
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 400px;
+    background-color: rgba(185, 147, 76, 0.325);
+    /* column-gap: 30px; */
+}
+.div_img {
+    background-color: black;
+    height: 100%;
+    width: 65%;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.div_desc {
+    height: 100%;
+    width: 35%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 30px;
+    p {
+        margin-top: 20px;
+        font-size: 28px;
+        background-color: #FF9900;
+        color: black;
+        font-weight: bolder;
+        padding: 3px;
+        border-radius: 10px;
+    }
+    ul {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: start;
+        list-style: square;
+    }
+}
+
+
 .divtst {
   background-color: green;
   height: 220px;
-  width: 110px;
+  width: 250px;
+  display: flex;
+  img{
+    height: 100%;
+    width: 70%;
+  }
 
 }
 .pedios {
