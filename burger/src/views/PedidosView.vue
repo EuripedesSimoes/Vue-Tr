@@ -6,7 +6,8 @@
         </nav>
 
 
-        <div class="div_Main_lunch">
+        <div class="div_Main_lunch" id="post-containerr" >
+            <!-- v-for="burgerss in All_Burgers" :key="burgerss.id" -->
 
             <div class="div_Sec_lunch">
                 <!--Terá 2 DIVs, a da IMG e da DESCRICAO -->
@@ -40,16 +41,26 @@
 </template>
 
 <script>
+// import { forEach } from 'core-js/core/array';
+
 // POSSIVEL BUG, QUANDO PÁGINA É RECARREGADA O ROUTER NAO RECARREGA E PERMANECE IGUAL
 export default {
     data(){
         return {
         //  img_src2: "./assetsViews/x-salada.jpeg"
-        img_src_final: null,
-        id_final: null,
-        nome_final: null,
-        pao_final: null,
-        carne_final: null
+        // img_src_SS: null,
+        // id_SS: null,
+        // nome_SS: null,
+        // pao_SS: null,
+        // carne_SS: null,
+        burger_SS: null,
+        burger_CS: null
+
+        // img_src_final: null,
+        // id_final: null,
+        // nome_final: null,
+        // pao_final: null,
+        // carne_final: null
 
         }
     },
@@ -58,13 +69,16 @@ export default {
         const req_final = await fetch("http://localhost:3000/burgers")
         const data = await req_final.json()
 
-        this.carne_final = data.All_Burgers
-        console.log(this.carne_final)
+        this.burger_SS = data.All_Burgers
+        console.log(this.burger_SS)
     
 
         //identifica o container para criar os elementos
-        const div2lunch = document.getElementById('post-container-final')
-        
+        const divMainlunch = document.getElementById('post-containerr')
+        // const div_pcf = document.createElement('div')
+
+        //cria a div que carregará a IMG e a DESC
+        const div2lunch = document.createElement('div')
         
         //criando os elementos de DIV e P ---- 1 DIV
         const divContainerImg = document.createElement('div')
@@ -73,7 +87,7 @@ export default {
         //criando os elementos de DIV e P ---- 2 DIV
         const divContainerDesc = document.createElement('div')
         const p = document.createElement('p')
-        p.innerText = 'DIV teste final'
+        p.innerText = 'DIV tetse final'
         const ul = document.createElement('ul')
         const li = document.createElement('li')
 
@@ -98,6 +112,9 @@ export default {
         div2lunch.appendChild(divContainerImg)
         div2lunch.appendChild(divContainerDesc)
 
+        divMainlunch.appendChild(div2lunch)
+        
+
     
     //   const postContainer = document.getElementById('post-container-final')
 
@@ -119,7 +136,27 @@ export default {
     }
     },
     mounted() {
-    this.cuz()
+        async function calabreso(){
+            const req_calabreso = await fetch("http://localhost:3000/burgers")
+            const data_calabreso = await req_calabreso.json()
+
+            let burger_array = null
+
+            burger_array = data_calabreso.All_Burgers
+            
+            burger_array.forEach((_, i)=>
+        {
+            let ind = i
+            console.log(ind)
+            this.cuz()*ind
+        })
+        }
+        // for (let i = 0; i < 5; i++){
+        //     this.cuz()
+
+        // }
+        
+        calabreso(this.cuz())
 }
 }
 
