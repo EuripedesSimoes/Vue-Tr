@@ -122,7 +122,7 @@
 "burgers": {
   "All_Burgers": [
       {
-        "img_src": "../assets/pedidos/pedidos_burger/x-salada.jpeg",
+        "img_src": "/img/x-salada.18032e04.jpeg",
         "id": 1,
         "nome": "x-salada",
         "pao": "brioche",
