@@ -143,18 +143,20 @@ export default {
             let burger_array = null
 
             burger_array = data_calabreso.All_Burgers
-            
-            burger_array.forEach((_, i)=>
-        {
+            console.log(burger_array.push())
+            burger_array.forEach((_, i)=>{
             let ind = i
             console.log(ind)
-            this.cuz()*ind
+            // this.cuz()*ind
+            // for (let i = 0; i < 5; i++){
+            //     this.cuz()
+            // }
+            while (ind === true){
+                console.log('cu')
+            }
         })
         }
-        // for (let i = 0; i < 5; i++){
-        //     this.cuz()
 
-        // }
         
         calabreso(this.cuz())
 }
@@ -221,3 +223,30 @@ export default {
 } */
 
 </style>
+
+<!-- // URL do banco de dados JSON
+const url = 'https://exemplo.com/banco-de-dados.json';
+
+// Função para fazer a requisição fetch e processar os dados
+async function fetchAndCreateDivs() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const paes = data.paes;
+
+        // Percorre os itens do array e cria uma div para cada id
+        paes.forEach(pao => {
+            const div = document.createElement('div');
+            div.textContent = `ID: ${pao.id}, Tipo: ${pao.tipo}`;
+            document.body.appendChild(div);
+        });
+
+    } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+    }
+}
+
+// Chama a função para executar a requisição e criação das divs
+fetchAndCreateDivs(); -->
+
