@@ -94,10 +94,23 @@ export default {
         //criando os elementos de DIV e P ---- 2 DIV
         const divContainerDesc = document.createElement('div')
         const p_brg = document.createElement('p')
-        p_brg.innerText = 'DIV tetse final'
+        // p_brg.innerText = 'DIV tetse final'
+        p_brg.innerText = burgin_SS.nome
         const ul_brg = document.createElement('ul')
-        const li_brg = document.createElement('li')
+        const li_brg_pao = document.createElement('li')
+        const li_brg_carne = document.createElement('li')
+        const li_brg_extra = document.createElement('li')
 
+        //colocando innerText nos LIs
+        li_brg_pao.innerText = `Pão: ${burgin_SS.pao}`
+        // li_brg_pao.innerText = 'Pão: ' + burgin_SS.pao
+        li_brg_carne.innerText = `Carne: ${burgin_SS.carne}`
+        if (burgin_SS.extra === ''){
+            ul_brg.style.listStyle = 'none'
+        }
+        else{
+        li_brg_extra.innerText = `Extra: ${burgin_SS.extra}`
+    }
         //cuidando da IMG
         // img.setAttribute('class', 'imgFromLunch')
             img_brg.src = burgin_SS.img_src  
@@ -115,7 +128,9 @@ export default {
 
         //Colocando texto no P e colocando o P dentro da DIV
         divContainerDesc.appendChild(p_brg)
-        ul_brg.appendChild(li_brg)
+        ul_brg.appendChild(li_brg_pao)
+        ul_brg.appendChild(li_brg_carne)
+        ul_brg.appendChild(li_brg_extra)
         divContainerDesc.appendChild(ul_brg)
 
         //colocando a DIV criada dentro da DIV principal
@@ -247,6 +262,7 @@ export default {
     width: 900px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     
     a {
         

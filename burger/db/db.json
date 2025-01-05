@@ -124,16 +124,27 @@
       {
         "img_src": "/img/x-salada.18032e04.jpeg",
         "id": 1,
-        "nome": "x-salada",
+        "nome": "X-Salada",
         "pao": "brioche",
-        "carne": "picanha"
+        "carne": "picanha",
+        "extra": ""
       },
       {
-        "img_src": "../assets/pedidos/pedidos_burger/x-salada.jpeg",
+        "img_src": "/img/x-burger.7b5b3440.jpg",
         "id": 2,
-        "nome": "x-burger",
+        "nome": "X-Burger",
         "pao": "batata",
-        "carne": "angus"
+        "carne": "angus",
+        "extra": ""
+      },
+      
+      {
+        "img_src": "/img/x-bacon.da16d158.jpg",
+        "id": 2,
+        "nome": "X-Bacon",
+        "pao": "batata",
+        "carne": "angus",
+        "extra": "bacon"
       }
 ]
 }
