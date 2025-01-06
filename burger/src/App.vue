@@ -132,21 +132,24 @@ export default{
     justify-content: center;
     align-items: center;
     height: 250px;
-    width: 400px;
-    flex: 1 1 300px;
-    /* max-width: 400px; */
+    /* width: 400px; */
+    flex: 1 1 200px;
+    max-width: 400px;
     background-color: rgba(185, 147, 76, 0.325);
     margin: 10px;
     /* column-gap: 30px; */
 }
 .div_img {
-    background-color: rgb(147, 73, 73);
+    /* background-color: rgb(147, 73, 73); */
+    background-color: black;
     height: 250px;
-    width: 65%;
+    /* width: 260px; */
+    width: 240px;
     img{
       display: block;
-        height: 70%;
-        width: 70%;
+        height: 100%;
+        width: 100%;
+        
         /* max-height: auto;
         max-width: auto; */
     }
@@ -154,8 +157,9 @@ export default{
 
 .div_desc {
     height: 250px;
-    width: 35%;
-    background-color: rgb(63, 78, 33);
+    width: 160px;
+    /* background-color: rgb(63, 78, 33); */
+    background: black;
     display: flex;
     flex-direction: column;
     justify-content: start;

@@ -195,8 +195,8 @@ export default {
     backdrop-filter: blur(5px);
     color: white;
     height: 75vh;
-    /* width: 900px; */
-    /* flex: 1 1 300px; */
+    /* flex: 1 1 300px; MUDA NADA*/
+    /* width: 900px; PRECISA SER MAX-WIDTH PARA OCORRER O WRAP */
     max-width: 900px;
     display: flex;
     flex-direction: column;
@@ -217,9 +217,9 @@ export default {
     
     /* AS divs de dentro pulam de linha (wrap) se não couberem na WIDTH atual */
     flex-wrap: wrap;
-    /* max-width: 900px; */
+    /* max-width: 900px; NÃO FUNCIONA, TEM  QUE SER NO PEIDOSVIEW*/
     height: auto;
-    background-color: rgba(255, 217, 0, 0.623);
+    /* background-color: rgba(255, 217, 0, 0.623); */
 }
 
 
