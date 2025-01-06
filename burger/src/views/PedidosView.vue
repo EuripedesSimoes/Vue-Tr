@@ -1,9 +1,12 @@
 <template>
     <main class="peidosView">
-        <!-- <nav class="nav">
+        <nav class="nav">
             <a href="">Voltar</a>
             <p>Aba de pedids</p>
-        </nav> -->
+            <img class="imgFromLunch" style="display: none;" src="../../src/assets/pedidos/pedidos_burger/assetsViews/x-salada.jpeg" alt="">
+            <img class="imgFromLunch" style="display: none;" src="../../src/assets/pedidos/pedidos_burger/assetsViews/x-burger.jpg" alt="">
+            <img class="imgFromLunch" style="display: none;" src="../../src/assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt="">
+        </nav>
 
 
         <div class="div_Main_lunch" id="post-containerr" >
@@ -141,6 +144,7 @@ export default {
     }
     },
     mounted() {
+
         this.cuz()
 }
 }
@@ -192,10 +196,11 @@ export default {
     color: white;
     height: 75vh;
     /* width: 900px; */
+    /* flex: 1 1 300px; */
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap; MAIN Lunch estiver abaixo de 900px*/
     
     a {
         
@@ -209,11 +214,12 @@ export default {
     justify-content: center;
     align-items: center;
     /* column-gap: 35px; */
+    
+    /* AS divs de dentro pulam de linha (wrap) se não couberem na WIDTH atual */
     flex-wrap: wrap;
     /* max-width: 900px; */
-    max-width: 900px;
     height: auto;
-    background-color: gold;
+    background-color: rgba(255, 217, 0, 0.623);
 }
 
 
