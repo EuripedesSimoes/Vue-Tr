@@ -116,12 +116,6 @@ export default{
 
 <style >
 
-.div_Main_lunch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
-}
 .div_Sec_lunch{
     border: 3px solid black;
     display: flex;
@@ -130,22 +124,34 @@ export default{
     height: 250px;
     width: 400px;
     background-color: rgba(185, 147, 76, 0.325);
+    margin: 10px;
     /* column-gap: 30px; */
 }
+.peidosView > .div_Sec_lunch {
+  flex: 1 1 500px;
+  align-items: center;
+  /* margin: 100px; */
+}
+.div_Sec_lunch > .div_img {
+    height: 250px;
+    width: 240px;
+
+}
 .div_img {
-    background-color: black;
-    height: 100%;
-    width: 65%;
+    background-color: rgb(147, 73, 73);
     img{
-        height: 100%;
-        width: 100%;
+      display: block;
+        height: 70%;
+        width: 70%;
+        /* max-height: auto;
+        max-width: auto; */
     }
 }
 
 .div_desc {
-    height: 100%;
-    width: 35%;
-    background-color: black;
+    height: 250px;
+    width: 160px;
+    background-color: rgb(63, 78, 33);
     display: flex;
     flex-direction: column;
     justify-content: start;

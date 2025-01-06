@@ -1,15 +1,15 @@
 <template>
-    <main class="peidos">
-        <nav class="nav">
+    <main class="peidosView">
+        <!-- <nav class="nav">
             <a href="">Voltar</a>
             <p>Aba de pedids</p>
-        </nav>
+        </nav> -->
 
 
         <div class="div_Main_lunch" id="post-containerr" >
             <!-- v-for="burgerss in All_Burgers" :key="burgerss.id" -->
 
-            <div class="div_Sec_lunch">
+            <div class="div_Sec_lunch" style="margin: 10px;">
                 <!--Terá 2 DIVs, a da IMG e da DESCRICAO -->
 
                 <!--DIV da IMG -->
@@ -117,8 +117,6 @@ export default {
     // "../assets/pedidos/pedidos_burger/x-salada.jpeg"
 
         // img_brg.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
-        // img_brg.style.height = '100%'
-        // img_brg.style.width = '100%'
 
         //colocando classes 'LUNCH' padrao nas DIVs criadas
         div2lunch.className = 'div_Sec_lunch'
@@ -140,75 +138,9 @@ export default {
         divMainlunch.appendChild(div2lunch)
         
     })
-    
-    //   const postContainer = document.getElementById('post-container-final')
-
-    //   const divteste = document.createElement('div')
-    //   const p = document.createElement('p')
-    //   const img = document.createElement('img')
-
-    //   divteste.setAttribute('class','divtst')
-    //   img.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
-    //   // img.style.height = '10px'
-
-    //   p.innerText = 'DIV TETSE'
-      
-    //   divteste.appendChild(img)
-    //   divteste.appendChild(p)
-
-    //   postContainer.appendChild(divteste)
-
     }
     },
     mounted() {
-    //     async function calabreso(){
-    //         const req_calabreso = await fetch("http://localhost:3000/burgers")
-    //         const data_calabreso = await req_calabreso.json()
-
-    //         let burger_array = null
-
-    //         burger_array = data_calabreso.All_Burgers
-    //         console.log(burger_array.push())
-    //         burger_array.forEach((_, i)=>{
-    //             let ind = i
-    //         console.log(ind)
-    //         // this.cuz()*ind
-    //         // for (let i = 0; i < 5; i++){
-    //         //     this.cuz()
-    //         // }
-    //         while (ind === true){
-    //             console.log('cu')
-    //         }
-    //     })
-    // }
-  // URL do banco de dados JSON
-    // const url = 'https://exemplo.com/banco-de-dados.json';
-    
-    // // Função para fazer a requisição fetch e processar os dados
-    // async function fetchAndCreateDivs() {
-    //     try {
-    //         const response = await fetch(url);
-    //         const data = await response.json();
-    
-    //         const paes = data.paes;
-    
-    //         // Percorre os itens do array e cria uma div para cada id
-    //         paes.forEach(pao => {
-    //             const div = document.createElement('div');
-    //             div.textContent = `ID: ${pao.id}, Tipo: ${pao.tipo}`;
-    //             document.body.appendChild(div);
-    //         });
-    
-    //     } catch (error) {
-    //         console.error('Erro ao buscar os dados:', error);
-    //     }
-    // }
-    
-    // // Chama a função para executar a requisição e criação das divs
-    // fetchAndCreateDivs(); 
-    
-    
-        // calabreso()
         this.cuz()
 }
 }
@@ -253,22 +185,37 @@ export default {
     width: 100%;
 
 }
-.peidos {
+.peidosView {
     margin: 0 auto;
     background-color: #dddddd95;
     backdrop-filter: blur(5px);
     color: white;
     height: 75vh;
-    width: 900px;
+    /* width: 900px; */
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     
     a {
         
     color: rgb(28, 209, 125);
     }
 }
+
+.div_Main_lunch{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* column-gap: 35px; */
+    flex-wrap: wrap;
+    /* max-width: 900px; */
+    max-width: 900px;
+    height: auto;
+    background-color: gold;
+}
+
 
 /* #pao_lanche {
     list-style: square;
