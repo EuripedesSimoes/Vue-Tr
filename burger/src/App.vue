@@ -184,6 +184,51 @@ export default{
     }
 }
 
+.div_preco_btn {
+  margin-top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 400px;
+  margin-left: -240px;
+  background-color: rgba(34, 34, 34, 0.384);
+  backdrop-filter: blur(2px);
+}.div_preco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 240px;
+  /* background-color: red; */
+}.div_btn {
+  /* background-color: yellow; */
+    /* margin-left: -240px; */
+    height: 60px;
+    /* width: 100%; */
+    width: 160px;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* row-gap: 25px; */
+    button {
+      background-color: rgba(37, 37, 37, 0.582);
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+      color: white;
+      border-radius: 50%;
+      border: 3px solid white;
+      /* margin: 5px; */
+    }
+    p {
+      background-color: black;
+      color: white;
+      margin: 5px;
+    }
+}
 
 .divtst {
   background-color: green;

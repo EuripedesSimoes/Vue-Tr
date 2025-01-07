@@ -50,20 +50,8 @@
 export default {
     data(){
         return {
-        //  img_src2: "./assetsViews/x-salada.jpeg"
-        // img_src_SS: null,
-        // id_SS: null,
-        // nome_SS: null,
-        // pao_SS: null,
-        // carne_SS: null,
         burger_SS: null,
         burger_CS: null
-
-        // img_src_final: null,
-        // id_final: null,
-        // nome_final: null,
-        // pao_final: null,
-        // carne_final: null
 
         }
     },
@@ -134,6 +122,39 @@ export default {
         ul_brg.appendChild(li_brg_extra)
         divContainerDesc.appendChild(ul_brg)
 
+
+        //criando os botões de diminuir e adicionar a quantidade de lanches
+        const div_preco_btn = document.createElement('div')
+        div_preco_btn.className = 'div_preco_btn'
+
+        //DIV PREÇO
+        const div_preco = document.createElement('div')
+        const h1_preco = document.createElement('h1')
+        h1_preco.innerText = `R$ ${burgin_SS.preço}`
+
+        div_preco.appendChild(h1_preco)
+        div_preco.className = 'div_preco'
+
+        //DIV BOTÕES
+        const div_btn = document.createElement('div')
+        const btn_brg_minus = document.createElement('button')
+        const p_quanty = document.createElement('p')
+        const btn_brg_add = document.createElement('button')
+
+        btn_brg_minus.innerText = '--'
+        btn_brg_add.innerText = '++'
+        p_quanty.innerText = 'aa'
+        // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
+        div_btn.appendChild(btn_brg_minus)
+        div_btn.appendChild(p_quanty)
+        div_btn.appendChild(btn_brg_add)
+        div_btn.className = 'div_btn'
+
+        div_preco_btn.appendChild(div_preco)
+        div_preco_btn.appendChild(div_btn)
+
+        divContainerDesc.appendChild(div_preco_btn)
+
         //colocando a DIV criada dentro da DIV principal
         div2lunch.appendChild(divContainerImg)
         div2lunch.appendChild(divContainerDesc)
@@ -194,7 +215,7 @@ export default {
     background-color: #dddddd95;
     backdrop-filter: blur(5px);
     color: white;
-    height: 75vh;
+    height: auto;
     /* flex: 1 1 300px; MUDA NADA*/
     /* width: 900px; PRECISA SER MAX-WIDTH PARA OCORRER O WRAP */
     max-width: 900px;
@@ -221,7 +242,6 @@ export default {
     height: auto;
     /* background-color: rgba(255, 217, 0, 0.623); */
 }
-
 
 /* #pao_lanche {
     list-style: square;
