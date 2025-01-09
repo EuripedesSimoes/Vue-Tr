@@ -1,5 +1,6 @@
 <template>
-  <body :style="{'background-image': 'url('+body_img+')'} ">
+  <body >
+    <!-- :style="{'background-image': 'url('+body_img+')'} " -->
     <NavBar id="NavBar"></NavBar>
      <div id="post-container">
       <button type="button" v-on:click="criarDivMain">Criar div</button>
@@ -99,15 +100,11 @@ export default{
       // console.log(reqNew)
       // fazer as trocas de variaveis
 
-    }
+    },
     // tudo(){
     //   this.sumir()
     //   this.cu()
     // }
-
-// mounted() {
-//     this.criarDiv()
-// }
   },
 }
 </script>
@@ -221,7 +218,14 @@ export default{
       color: white;
       border-radius: 50%;
       border: 3px solid white;
+      transition: transform 0.5s, background-color 0.4s;
       /* margin: 5px; */
+    }
+    button:hover{
+      background-color: #dbdbdbbc;
+      cursor: pointer;
+      /* transition: 0.6s;
+      transition-duration: 2s;  */
     }
     p {
       background-color: black;
@@ -229,7 +233,16 @@ export default{
       margin: 5px;
     }
 }
-
+input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+      background-color: black;
+      color: white;
+}
 .divtst {
   background-color: green;
   height: 220px;
@@ -268,10 +281,14 @@ export default{
 body {
   width: 100vw;
   height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: black;
+  background-image: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg');
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
+  /*Shorthand -> background color > img > bg position > bg repeat > [bg size*] >
+  bg attachment */
   /*
     backdrop-filter:blur(3.5px);
     background-image: url('https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg')

@@ -138,12 +138,14 @@ export default {
         //DIV BOTÕES
         const div_btn = document.createElement('div')
         const btn_brg_minus = document.createElement('button')
-        const p_quanty = document.createElement('p')
+        let p_quanty = document.createElement('input')
+        // p_quanty.innerText =1
+        p_quanty.type = 'number'
         const btn_brg_add = document.createElement('button')
 
         btn_brg_minus.innerText = '--'
         btn_brg_add.innerText = '++'
-        p_quanty.innerText = 'aa'
+        p_quanty.value = 0
         // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
         div_btn.appendChild(btn_brg_minus)
         div_btn.appendChild(p_quanty)
@@ -160,6 +162,17 @@ export default {
         div2lunch.appendChild(divContainerDesc)
 
         divMainlunch.appendChild(div2lunch)
+
+        function more(){
+            p_quanty.value = p_quanty.value + 1
+
+        }
+        btn_brg_add.addEventListener('click', more)
+    // function more(){
+    // const p_quantya = document.querySelectorAll('p_quanty')
+    // console.log(p_quantya)
+    // const btn_mais = document.querySelectorAll('button')
+    // }
         
     })
     }
@@ -177,30 +190,11 @@ export default {
 :root {
     --bg: url("./assetsViews/x-salada.jpeg")
 } */
-.divtst {
-  background-color: green;
-  height: 220px;
-  width: 250px;
-  display: flex;
-  img{
-    height: 100%;
-    width: 70%;
-  }
-
-}
-
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: 0;
-}
-.divtst2{
-    /* background-image: var(--bg); */
-  background-color: rgb(113, 234, 15);
-  height: 220px;
-  width: 110px;
-
 }
 .nav {
     display: flex;
