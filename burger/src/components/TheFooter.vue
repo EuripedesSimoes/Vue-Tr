@@ -5,9 +5,9 @@
         <button name="btn1" @click="suma(this.name)">2</button>
         <button name="btn1" @click="suma(this.name)">3</button> -->
 
-        <RouterLink to="/btn1">Botao 1</RouterLink>
+        <!-- <RouterLink to="/btn1">Botao 1</RouterLink>
         <RouterLink to="/btn2">Botao 2</RouterLink>
-        <RouterLink to="/btn3">Botao 3</RouterLink>
+        <RouterLink to="/btn3">Botao 3</RouterLink> -->
     </div>
     <!-- <router-view/> -->
 </template>

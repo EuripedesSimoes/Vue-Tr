@@ -279,7 +279,7 @@ input {
     box-sizing: 0;
 }
 body {
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg');

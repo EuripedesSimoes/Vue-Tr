@@ -65,7 +65,7 @@ border-bottom: 3px solid #FF9900;
 display: flex;
 justify-content: space-around;
 align-items: center;
-width: 100vw;
+width: 99vw;
 height: 120px;
 }
 
