@@ -8,25 +8,28 @@
     <RouterLink to="/peidos"  v-on:click="sumir" class="pedios">Pedios</RouterLink>
 
     <!-- Div dos ROUTER LINKS  -->
-    <div class="linkPages">
-      
+    <div >
+      <!-- <HomeView></HomeView> -->
+    <!-- <div class="linkPages">  -->
       <!-- ROUTER LINK DOS BURGERS -->
-      <RouterLink to="/burgerPage" v-on:click="sumir">
+       
+      <!-- <RouterLink to="/burgerPage" v-on:click="sumir">
          <REP_burger></REP_burger>
-      </RouterLink>
+      </RouterLink> -->
 
       <!-- ROUTER LINK DAS PIZZAS -->
-      <RouterLink to="/pizzaPage" v-on:click="sumir">
+
+      <!-- <RouterLink to="/pizzaPage" v-on:click="sumir">
         <REP_pizza></REP_pizza>
-      </RouterLink>
+      </RouterLink> -->
 
       <!-- ROUTER LINK DOS HOTDOGS -->
-      <RouterLink to="/hotPage" v-on:click="sumir">
-        <REP_hotdog></REP_hotdog>
-      </RouterLink>
-    </div>
-    <RouterView/>
 
+      <!-- <RouterLink to="/hotPage" v-on:click="sumir">
+        <REP_hotdog></REP_hotdog>
+      </RouterLink> -->
+    </div>
+    <RouterView/> <!-- Precisar ficar ativo para aparecer na pagina -->
 
     <!-- <Main_Menu2 id="man"></Main_Menu2> -->
     <!-- <Main_Menu id="mn"></Main_Menu> -->
@@ -41,10 +44,11 @@ import NavBar from './components/NavBar.vue';
 // import Main_Menu from './components/Main.vue';
 // import Main_Menu2 from './components/Main2.vue';
 import Ingredients from './components/Ingredients.vue';
+// import HomeView from './views/HomeView.vue';
 // import TheFooter from './components/TheFooter.vue';
-import REP_burger from './components/REP_Pages/REP_burger.vue';
-import REP_pizza from './components/REP_Pages/REP_pizza.vue';
-import REP_hotdog from './components/REP_Pages/REP_hotdog.vue';
+//import REP_burger from './components/REP_Pages/REP_burger.vue';
+//import REP_pizza from './components/REP_Pages/REP_pizza.vue';
+//import REP_hotdog from './components/REP_Pages/REP_hotdog.vue';
 
 
 export default{
@@ -60,9 +64,10 @@ export default{
     // Main_Menu2,
     // TheFooter,
     Ingredients,
-    REP_burger,
-    REP_pizza,
-    REP_hotdog
+    // HomeView
+    // REP_burger,
+    // REP_pizza,
+    // REP_hotdog
   },
   methods:{
     // peidos (){
@@ -73,6 +78,17 @@ export default{
       // const rl = document.querySelectorAll('RouterLink')
       const lp = document.querySelector('.linkPages')
       lp.style.display = 'none'
+      // const bodyy = document.querySelector('body')
+      // bodyy.style.backgroundBlendMode = 'overlay'
+      // bodyy.style.backgroundColor = 'red'
+      
+  // background-blend-mode: overlay;
+  
+  // bodyy.style.backgroundBlendMode = 'overlay'
+  //     bodyy.style.backgroundColor = 'rgba(0, 0, 0, 0.417)'
+      
+
+
 
       
     },
@@ -124,7 +140,8 @@ export default{
 
 } */
 .div_Sec_lunch{
-    border: 3px solid black;
+    border: 3.5px solid black;
+    border-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +161,7 @@ export default{
     width: 240px;
     img{
       display: block;
-        height: 100%;
+        height: 99%;
         width: 100%;
         
         /* max-height: auto;
@@ -182,7 +199,9 @@ export default{
 }
 
 .div_preco_btn {
-  margin-top: -2px;
+  /* position: absolute; */
+  margin-top: -8px;
+  /* margin-top: 50%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -278,11 +297,19 @@ input {
     padding: 0;
     box-sizing: 0;
 }
+:root {
+  --bg: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg')
+}
+
 body {
   width: 99vw;
   height: 100vh;
-  background-color: black;
-  background-image: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg');
+  /* background-color: black; */
+  background-blend-mode: overlay;
+  
+  backdrop-filter:blur(3.5px);
+  /* background-image: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg'); */
+  background-image: var(--bg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -138,14 +138,14 @@ export default {
         //DIV BOTÕES
         const div_btn = document.createElement('div')
         const btn_brg_minus = document.createElement('button')
-        let p_quanty = document.createElement('input')
+        let p_quanty = document.createElement('p')
         // p_quanty.innerText =1
-        p_quanty.type = 'number'
+        // p_quanty.type = 'number'
         const btn_brg_add = document.createElement('button')
 
         btn_brg_minus.innerText = '--'
         btn_brg_add.innerText = '++'
-        p_quanty.value = 0
+        p_quanty.innerText = "0"
         // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
         div_btn.appendChild(btn_brg_minus)
         div_btn.appendChild(p_quanty)
@@ -164,16 +164,50 @@ export default {
         divMainlunch.appendChild(div2lunch)
 
         function more(){
-            p_quanty.value = p_quanty.value + 1
+            // alert(p_quanty.innerText)
 
+            //pega o texto dentro do P_QUANTY e transforma em numero
+            let valorAtual = Number(p_quanty.innerText)
+            //ao clicar, recebe um novo valor que é a soma do numero (ex-string) + 1
+            let novoValor = valorAtual + 1
+            //novo texto dentro de P_QUANTY é esse novo valor
+            p_quanty.innerText = novoValor
+            
+            // p_quanty.innerText = p_quanty.innerText + 1
+            // if (p_quanty === 10) {
+            //     stop
+            // }
+        }
+        
+        function min(){
+        let valorAtual = Number(p_quanty.innerText)
+        let novoValor = valorAtual - 1
+            if(novoValor > 0){
+                // se o novo valor for maior que 0, continue diminuindo
+            p_quanty.innerText = novoValor
+            }
+            else if (novoValor <= 0){
+                // se o novo valor for igual ou menor que 0, novo valor = 0
+                novoValor = 0
+                p_quanty.innerText = novoValor
+            }
         }
         btn_brg_add.addEventListener('click', more)
-    // function more(){
-    // const p_quantya = document.querySelectorAll('p_quanty')
-    // console.log(p_quantya)
-    // const btn_mais = document.querySelectorAll('button')
-    // }
+        btn_brg_minus.addEventListener('click', min)
         
+        // const bodyy = document.body.style.backgroundColor = 'black'
+        // const bodyy = document.querySelector('main')
+        // bodyy.style.backgroundColor = "red"
+        const black = document.createElement('div')
+        black.className = 'black'
+        // black.style.width = '99%'
+        // black.style.height = '99%'
+        // black.style.backgroundColor = 'black'
+        divMainlunch.appendChild(black)
+        const bodyyy = document.querySelector('body')
+        
+      bodyyy.style.backgroundBlendMode = 'overlay'
+      bodyyy.style.backgroundColor = 'blue'
     })
     }
     },
@@ -186,6 +220,12 @@ export default {
 </script>
 
 <style scoped>
+.black {
+    background-color: black;
+    /* position: absolute; */
+    width: 1920px;
+    height: 1080px;
+}
 /* 
 :root {
     --bg: url("./assetsViews/x-salada.jpeg")
@@ -232,6 +272,7 @@ export default {
     
     /* AS divs de dentro pulam de linha (wrap) se não couberem na WIDTH atual */
     flex-wrap: wrap;
+    /* behavior: "smooth"; */
     /* max-width: 900px; NÃO FUNCIONA, TEM  QUE SER NO PEIDOSVIEW*/
     height: auto;
     /* background-color: rgba(255, 217, 0, 0.623); */
