@@ -9,10 +9,18 @@
 </script>
 
 <style scoped>
+/* @media screen and (max-width: 750px) {
+    img {
+    height: 120px;
+    width: 120px;
+
+    }
+} */
 
 img {
+/*     
     height: 240px;
-    width: 240px;
+    width: 240px; */
     transition: transform;
     transition-duration: 1.2s;
     /*

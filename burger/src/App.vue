@@ -142,6 +142,59 @@ export default{
   width: 240px;
 
 } */
+@media screen and (min-width:500px) {
+  .div_Sec_lunch {
+    max-width: 400px;
+  }
+  .div_desc {
+    width: 160px;
+    p {
+      font-size: 28px;
+    }
+    ul {margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: start;
+        list-style: square;}
+  }
+  .div_preco_btn {
+    max-width: 400px;
+    margin-left: -240px;
+    margin-top: -8px;
+  }
+
+
+
+
+}@media screen and (max-width:499px) {
+  .div_Sec_lunch {
+    max-width: 330px;
+  }
+  .div_desc {
+    width: 130px;
+    p {
+      font-size: 26px;
+    } 
+    ul {
+      margin-left: 18px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: start;
+        list-style: square;
+        font-size: 15px;
+        /* text-align: center; */
+    }
+  }
+  .div_preco_btn {
+    max-width: 330px;
+    margin-left: -200px;
+    margin-top: -22px;
+  }
+}
+
+
 .div_Sec_lunch{
     border: 3.5px solid black;
     border-bottom: 10px;
@@ -151,7 +204,7 @@ export default{
     height: 250px;
     /* width: 400px; */
     flex: 1 1 200px;
-    max-width: 400px;
+    /* max-width: 400px; */
     background-color: rgba(185, 147, 76, 0.325);
     margin: 10px;
     /* column-gap: 30px; */
@@ -174,7 +227,7 @@ export default{
 
 .div_desc {
     height: 250px;
-    width: 160px;
+    /* width: 160px; */
     /* background-color: rgb(63, 78, 33); */
     background: black;
     display: flex;
@@ -184,7 +237,7 @@ export default{
     row-gap: 30px;
     p {
         margin-top: 20px;
-        font-size: 28px;
+        /* font-size: 28px; */
         background-color: #FF9900;
         color: black;
         font-weight: bolder;
@@ -192,25 +245,25 @@ export default{
         border-radius: 10px;
     }
     ul {
-        margin-left: 15px;
+        /* margin-left: 15px;
         display: flex;
         flex-direction: column;
         row-gap: 10px;
         align-items: start;
-        list-style: square;
+        list-style: square; */
     }
 }
 
 .div_preco_btn {
   /* position: absolute; */
-  margin-top: -8px;
+  /* margin-top: -8px; */
   /* margin-top: 50%; */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
-  width: 400px;
-  margin-left: -240px;
+  /* width: 400px; */
+  /* margin-left: -240px; */
   background-color: rgba(34, 34, 34, 0.384);
   backdrop-filter: blur(2px);
 }.div_preco {
@@ -283,22 +336,43 @@ input {
   font-size: 30px;
 }
 
+
+@media screen and (max-width: 999px) {
+    .linkPages {
+      width: 710px;
+      justify-content: space-between;
+      padding: 25px;
+      /* display: flex;
+      flex-wrap: wrap; */
+    }
+  }
+@media screen and (max-width: 750px){
+  .linkPages {
+      width: 360px;
+      justify-content: center;
+      padding: 10px 0px;
+    }
+}@media screen and (min-width: 1000px){
+  .linkPages {
+      justify-content: center;
+    }
+}
 .linkPages {
+  /* @media screen  { min-width: 950px;
+    width: 700px;
+  } */
+   
+  border: 3px solid black;
   margin: 0 auto;
-  min-height: 700px;
-  max-height: auto;
+  min-height: 500px;
+  /* max-height: auto; */
   /* min-width: 700px; com isso nao tem wrap*/
   max-width: 1000px;
   flex-wrap: wrap;
   background-color: aliceblue;
   display: flex;
-  justify-content: center;
-  align-items: start;
-  align-content: start;
-  column-gap: 10px;
-  row-gap: 10px;
-  /* flex-basis: 1 1 700px;
-  flex-wrap: wrap; */
+
+  /* flex-basis: 1 1 700px; */
 }
 *{
     margin: 0;
@@ -364,14 +438,36 @@ body .footer_container {
 
 } */
 
+@media screen and (max-width: 399px){
+  .prod {
+    height: 240px;
+    min-width: 280px;
+    img {
+    height: 180px;
+    width: 180px;
+    }
+    }
+}@media screen and (min-width: 400px){
+  .prod {
+    height: 280px;
+    min-width: 300px;
+    img {
+    height: 240px;
+    width: 240px;
+    }
+    }
+}
 
 .prod{
+  margin: 10px;
   /* margin: 20px 5px; */
     /* margin-top: 20px; */
     /* margin: 0 auto; */
     /* margin-left: 15px; */
-    height: auto;
-    min-width: 300px;
+    /* align-self: center; */
+    /* flex-grow: 1; */
+    /* height: 280px;
+    min-width: 300px; */
     background-color: rgba(58, 58, 58, 0.575);
     border: 4px solid #b9b9b9;
     border-radius: 10px;

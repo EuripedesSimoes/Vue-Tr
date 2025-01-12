@@ -11,8 +11,8 @@
 <style scoped>
 
 img {
-    height: 240px;
-    width: 240px;
+    /* height: 240px;
+    width: 240px; */
     transition: transform;
     transition-duration: 1.2s;
     /*

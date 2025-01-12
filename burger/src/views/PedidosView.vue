@@ -245,6 +245,25 @@ export default {
     width: 100%;
 
 }
+@media screen and (min-width:900px) {
+    .peidosView {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width:899px) {
+    .peidosView {
+        max-width: 700px;
+    }
+}
+@media screen and (max-width:499px) {
+    .peidosView {
+        max-width: 350px;
+    }
+}
+
+
+
 .peidosView {
     margin: 0 auto;
     background-color: #dddddd95;
@@ -253,7 +272,7 @@ export default {
     height: auto;
     /* flex: 1 1 300px; MUDA NADA*/
     /* width: 900px; PRECISA SER MAX-WIDTH PARA OCORRER O WRAP */
-    max-width: 900px;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; MAIN Lunch estiver abaixo de 900px*/
