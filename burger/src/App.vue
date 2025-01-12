@@ -1,9 +1,9 @@
 <template>
-  <body >
+  <body class="bodyMine">
     <!-- :style="{'background-image': 'url('+body_img+')'} " -->
     <NavBar id="NavBar"></NavBar>
      <div id="post-container">
-      <button type="button" v-on:click="criarDivMain">Criar div</button>
+      <button type="button" v-on:click="criarDivMain">Criar div blend</button>
      </div>
     <RouterLink to="/peidos"  v-on:click="sumir" class="pedios">Pedios</RouterLink>
 
@@ -78,20 +78,29 @@ export default{
       // const rl = document.querySelectorAll('RouterLink')
       const lp = document.querySelector('.linkPages')
       lp.style.display = 'none'
+
+      const bodyy = document.querySelector('.bodyMine')
+      bodyy.setAttribute('id', 'bodyBlend')
+      
+      const pedios = document.querySelector('.pedios')
+      pedios.style.display = 'none'
       // const bodyy = document.querySelector('body')
       // bodyy.style.backgroundBlendMode = 'overlay'
       // bodyy.style.backgroundColor = 'red'
-      
+      // bodyy.style.backgroundImage = 'var(--bg)'
+      // bodyy.setAttribute('class', 'bodyBlend')
   // background-blend-mode: overlay;
   
   // bodyy.style.backgroundBlendMode = 'overlay'
   //     bodyy.style.backgroundColor = 'rgba(0, 0, 0, 0.417)'
       
-
-
-
-      
-    },
+    }
+    // ,
+    // blend(){
+    //   const bodyy = document.querySelector('.bodyMine')
+    //   bodyy.setAttribute('id', 'bodyBlend')
+    // }
+    ,
     async criarDivMain(){
       const postContainer = document.getElementById('post-container')
 
@@ -109,12 +118,6 @@ export default{
       divteste.appendChild(p)
 
       postContainer.appendChild(divteste)
-
-      // const req = await fetch("http://localhost:3000/burgers")
-      // const reqNew = await req.json()
-
-      // console.log(reqNew)
-      // fazer as trocas de variaveis
 
     },
     // tudo(){
@@ -282,13 +285,18 @@ input {
 
 .linkPages {
   margin: 0 auto;
-  height: 700px;
-  width: 1000px;
+  min-height: 700px;
+  max-height: auto;
+  /* min-width: 700px; com isso nao tem wrap*/
+  max-width: 1000px;
+  flex-wrap: wrap;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: start;
+  align-content: start;
   column-gap: 10px;
+  row-gap: 10px;
   /* flex-basis: 1 1 700px;
   flex-wrap: wrap; */
 }
@@ -304,8 +312,8 @@ input {
 body {
   width: 99vw;
   height: 100vh;
-  /* background-color: black; */
-  background-blend-mode: overlay;
+  background-color: black;
+  /* background-blend-mode: overlay; */
   
   backdrop-filter:blur(3.5px);
   /* background-image: url('https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_1280.jpg'); */
@@ -321,6 +329,13 @@ body {
     background-image: url('https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg')
     */
 }
+#bodyBlend {
+  background-color: rgba(0, 0, 0, 0.641);
+  background-blend-mode: overlay;
+  width: 99vw;
+  height: 100%;
+}
+
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -351,9 +366,12 @@ body .footer_container {
 
 
 .prod{
-    margin-top: 20px;
+  /* margin: 20px 5px; */
+    /* margin-top: 20px; */
+    /* margin: 0 auto; */
+    /* margin-left: 15px; */
     height: auto;
-    width: 300px;
+    min-width: 300px;
     background-color: rgba(58, 58, 58, 0.575);
     border: 4px solid #b9b9b9;
     border-radius: 10px;

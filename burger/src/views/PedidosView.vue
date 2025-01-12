@@ -204,10 +204,11 @@ export default {
         // black.style.height = '99%'
         // black.style.backgroundColor = 'black'
         divMainlunch.appendChild(black)
-        const bodyyy = document.querySelector('body')
         
-      bodyyy.style.backgroundBlendMode = 'overlay'
-      bodyyy.style.backgroundColor = 'blue'
+    //     const bodyyy = document.querySelector('body')
+        
+    //   bodyyy.style.backgroundBlendMode = 'overlay'
+    //   bodyyy.style.backgroundColor = 'blue'
     })
     }
     },
