@@ -17,6 +17,11 @@ const routes = [
     name: 'Pedidoos',
     component: () => import('../views/PedidosView.vue')
   },
+  {
+    path: '/user-carrinho',
+    name: 'user-carrinho',
+    component: () => import('../views/UserCarrinho.vue')
+  },
   // {
   // path: '/btn1',
   // name: 'bnt1',

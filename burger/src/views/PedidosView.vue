@@ -29,7 +29,7 @@
                         <li id="salada_lanche">Salada</li>
                     </ul>
                 </div>
-                
+                <UserCarrinho></UserCarrinho>
 
             </div>
 
@@ -44,17 +44,21 @@
 </template>
 
 <script>
+import UserCarrinho from './UserCarrinho.vue'
 // import { forEach } from 'core-js/core/array';
 
 // POSSIVEL BUG, QUANDO PÁGINA É RECARREGADA O ROUTER NAO RECARREGA E PERMANECE IGUAL
 export default {
     data(){
         return {
-        burger_SS: null,
-        burger_CS: null
-
+        // burger_SS: null,
+        // burger_CS: null
         }
     },
+    components: {
+        UserCarrinho
+    }
+    ,
     methods: {
     async cuz(){
         const req_final = await fetch("http://localhost:3000/burgers")
@@ -143,8 +147,8 @@ export default {
         // p_quanty.type = 'number'
         const btn_brg_add = document.createElement('button')
 
-        btn_brg_minus.innerText = '--'
-        btn_brg_add.innerText = '++'
+        btn_brg_minus.innerText = '-'
+        btn_brg_add.innerText = '+'
         p_quanty.innerText = "0"
         // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
         div_btn.appendChild(btn_brg_minus)

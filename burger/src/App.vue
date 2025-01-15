@@ -76,8 +76,11 @@ export default{
     // },
     sumir(){
       // const rl = document.querySelectorAll('RouterLink')
-      const lp = document.querySelector('.linkPages')
-      lp.style.display = 'none'
+      
+      // const lp = document.querySelector('.linkPages')
+      // lp.style.display = 'none'
+      
+      // lp.classList.add('suma')
 
       const bodyy = document.querySelector('.bodyMine')
       bodyy.setAttribute('id', 'bodyBlend')
@@ -223,6 +226,9 @@ export default{
         /* max-height: auto;
         max-width: auto; */
     }
+}
+.suma {
+  display: none;
 }
 
 .div_desc {

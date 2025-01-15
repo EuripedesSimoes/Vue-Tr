@@ -12,7 +12,8 @@
                 <a href="">Home</a>
             </li>
             <li id="li_del">
-                <a href="">Delivery</a>
+                <!-- <a href="">Delivery</a> -->
+                 <RouterLink to="/user-carrinho">Carrinho</RouterLink>
             </li>
             <li id="li_menu">
                 <a href="">Menu</a>
@@ -27,9 +28,12 @@
 </template>
 
 
-
-
 <script>
+
+// import userCarrinho from './views/UserCarrinho'
+// import UserCarrinho from './views/UserCarrinho'
+
+
 export default {
     name: 'NavBar',
 data() {
@@ -39,6 +43,9 @@ data() {
         logo_burg_NEW: '../assets/bg-one_logo.png',
     }
     },
+    components: {
+        // UserCarrinho
+    }
 
 }
 
