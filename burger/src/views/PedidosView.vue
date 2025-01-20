@@ -1,5 +1,8 @@
 <template>
     <main class="peidosView">
+        <button v-for="burginn in burger_SS" v-bind:key="burginn.id" > aaaaaaa
+            {{ burginn.name }}
+        </button>
         <nav class="nav">
             <a href="">Voltar</a>
             <p>Aba de pedids</p>
@@ -29,7 +32,7 @@
                         <li id="salada_lanche">Salada</li>
                     </ul>
                 </div>
-                <UserCarrinho></UserCarrinho>
+                <!-- <UserCarrinho></UserCarrinho> -->
 
             </div>
 
@@ -44,7 +47,7 @@
 </template>
 
 <script>
-import UserCarrinho from './UserCarrinho.vue'
+// import UserCarrinho from './UserCarrinho.vue'
 // import { forEach } from 'core-js/core/array';
 
 // POSSIVEL BUG, QUANDO PÁGINA É RECARREGADA O ROUTER NAO RECARREGA E PERMANECE IGUAL
@@ -56,13 +59,16 @@ export default {
         }
     },
     components: {
-        UserCarrinho
+        // UserCarrinho
     }
     ,
     methods: {
+    
     async cuz(){
         const req_final = await fetch("http://localhost:3000/burgers")
         const data = await req_final.json()
+
+    
 
     //         const paes = data.paes;
         this.burger_SS = data.All_Burgers
@@ -73,6 +79,10 @@ export default {
     //             document.body.appendChild(div);
     //         });
         this.burger_SS.forEach((burgin_SS) => { 
+            function cu(){
+        console.log(data[1])
+
+    }
             // alert( burgin_SS.img_src)
 
         //identifica o container para criar os elementos
@@ -130,6 +140,9 @@ export default {
         //criando os botões de diminuir e adicionar a quantidade de lanches
         const div_preco_btn = document.createElement('div')
         div_preco_btn.className = 'div_preco_btn'
+        const btn_teste = document.createElement('button')
+        btn_teste.innerText = 'teste'
+        btn_teste.addEventListener('click', cu)
 
         //DIV PREÇO
         const div_preco = document.createElement('div')
@@ -158,6 +171,7 @@ export default {
 
         div_preco_btn.appendChild(div_preco)
         div_preco_btn.appendChild(div_btn)
+        div_preco_btn.appendChild(btn_teste)
 
         divContainerDesc.appendChild(div_preco_btn)
 

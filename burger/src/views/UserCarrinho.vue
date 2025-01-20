@@ -1,23 +1,36 @@
 <template>
+    <pre>{{ cart }}</pre>
+    
 
     <main class="main_penis">
         <div class="penis">
             <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt="">
             <p>Sandubão de penis</p>
+            <p>{{ PV_descontruct }} </p>
         </div>
     </main>
 </template>
 
 <script>
+// import PedidosView from './PedidosView.vue';
+import { useCart } from '@/assets/composables/useCart';
+// const cart = useCart()
+
 export default{
     // name: 'userCarrinho',
     data () {
         return {
+            cart: useCart(),
+            // PV_descontruct: this.PedidosView
 
         }
     },
     methods: {
+        // const PV_descontruct = PedidosView
 
+    },
+    components: {
+        // PedidosView
     }
 }
 
