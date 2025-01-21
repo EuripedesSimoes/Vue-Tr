@@ -1,19 +1,19 @@
-import { ref } from "vue";
+// import { ref } from "vue";
 
-async function apiBackend(){  
-    const apiBK =  await fetch("http://localhost:3000/burgers") 
-    const dataAPI = await apiBK.json()
-    const par = document.createElement('p')
-    par.innerText = 'cu'
+// async function apiBackend(){  
+//     const apiBK =  await fetch("http://localhost:3000/burgers") 
+//     const dataAPI = await apiBK.json()
+//     const par = document.createElement('p')
+//     par.innerText = 'cu'
 
-    console.log(dataAPI)
-}
+//     console.log(dataAPI)
+// }
 
-const products = ref({
-    // id: 1,
-    // name: 'Produto 1'
-        apiBackend
-})
+// const products = ref({
+//     // id: 1,
+//     // name: 'Produto 1'
+//         apiBackend
+// })
 
 
 
@@ -29,8 +29,8 @@ const products = ref({
 // }
 // })
 
-export const useCart = () => {
-    return {
-        products
-    }
-}
+// export const useCart = () => {
+//     return {
+//         products
+//     }
+// }
