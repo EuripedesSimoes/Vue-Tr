@@ -70,6 +70,10 @@ export default{
     // REP_hotdog
   },
   methods:{
+    // submitar(){
+    //     alert('cu')
+        
+    // },
     // peidos (){
     //   const mn = document.getElementById('#man')
     //   mn.style.display = "none"
@@ -425,6 +429,11 @@ body {
   color: #2c3e50;
 }
 
+.inpSub {
+  height: 50px;
+  width: auto;
+  background-color: red;
+}
 /* nav {
   padding: 30px;
 

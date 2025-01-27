@@ -4,8 +4,18 @@
 
 <script>
 export default {
-    name: "DashBoard"
+    name: "DashBoard",
+
+
+    
+    
+    methods: {
+    }
 }
+// sessionStorage.testeUl = document.getElementById('ul_brg')
+// const dataaa = sessionStorage.getItem("testeUl");
+
+// alert(dataaa)
 
 </script>
 

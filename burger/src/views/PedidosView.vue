@@ -63,7 +63,11 @@ export default {
     }
     ,
     methods: {
-    
+    submitar(){
+        alert('cu')
+        
+    },
+
     async cuz(){
         const req_final = await fetch("http://localhost:3000/burgers")
         const data = await req_final.json()
@@ -159,10 +163,17 @@ export default {
         // p_quanty.innerText =1
         // p_quanty.type = 'number'
         const btn_brg_add = document.createElement('button')
+        const inputSubmit = document.createElement('input')
 
+        
+        p_quanty.innerText = "0"
         btn_brg_minus.innerText = '-'
         btn_brg_add.innerText = '+'
-        p_quanty.innerText = "0"
+        inputSubmit.type = 'submit'
+        inputSubmit.className = 'inpSub'
+        inputSubmit.addEventListener('click', this.submitar)
+        inputSubmit.value = 'Enviar Pedido'
+
         // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
         div_btn.appendChild(btn_brg_minus)
         div_btn.appendChild(p_quanty)
@@ -179,6 +190,8 @@ export default {
         div2lunch.appendChild(divContainerImg)
         div2lunch.appendChild(divContainerDesc)
 
+
+        divMainlunch.appendChild(inputSubmit)
         divMainlunch.appendChild(div2lunch)
 
         function more(){
@@ -235,6 +248,11 @@ export default {
         this.cuz()
 }
 }
+    const testeUl = document.getElementById('ul_brg').innerHTML
+    // sessionStorage.setItem('')
+    // const dataaa = sessionStorage.getItem("testeUl")
+
+    alert(testeUl)
 
 </script>
 

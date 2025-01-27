@@ -35,8 +35,11 @@ export default{
     components: {
         CuDashBoard
         // PedidosView
-    }
+    },
+    
+
 }
+   
 
 </script>
 
