@@ -9,6 +9,8 @@
             <!-- <p>{{ PV_descontruct }} </p> -->
         </div>
         <CuDashBoard/>
+        
+        <p id="localP">a</p>
     </main>
 </template>
 
@@ -29,17 +31,37 @@ export default{
         }
     },
     methods: {
+     localTeste(){
+        let valor1 = localStorage.getItem('random')
+        let valorString = String(valor1)
+        // alert(valorString)
+        let p_sherman = document.getElementById('localP')
+        p_sherman.innerText = valorString
+
+    }
         // const PV_descontruct = PedidosView
 
     },
     components: {
         CuDashBoard
         // PedidosView
-    },
+    }
+    ,
+    mounted() {
+        this.localTeste()
+        
+}
     
 
 }
-   
+//    const p_storage = document.getElementById('localText')
+//       p_storage.innerText = 'abb'
+//    alert(p_storage.innerText)
+
+//    localStorage.getItem('random')
+
+    //funfo
+    //alert(localStorage.getItem('random'))
 
 </script>
 
@@ -55,7 +77,8 @@ export default{
     margin: 0 auto;
     height: 200px;
     width: 300px;
-    background-color: rgb(51, 61, 58);
+    background-color: rgb(96, 114, 219);
+    flex-wrap: wrap;
     display: flex;
     img {
     height: 90px;
@@ -69,7 +92,7 @@ export default{
     margin: 0 auto;
     height: 100px;
     width: 200px;
-    background-color: aquamarine;
+    background-color: rgb(206, 206, 206);
     display: flex;
     justify-content: space-around;
     align-items: center;

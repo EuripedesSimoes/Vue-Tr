@@ -63,8 +63,23 @@ export default {
     }
     ,
     methods: {
-    submitar(){
-        alert('cu')
+    submitarStorage(){
+        // alert('cu')
+
+        // const testeUl = document.getElementById('ul_brg').innerHTML
+        const testeUl = document.querySelector('.inpSub').value
+        const testeLi = document.querySelectorAll('li').value
+        // const allUl = document.querySelectorAll('ul')
+        // alert(allUl)
+        // for(let i = 1; i < 4; i++){
+        localStorage.setItem('random'+1, testeUl)
+        localStorage.setItem('random'+2, testeLi)
+
+        // }
+        // const dataaa = sessionStorage.getItem("testeUl")
+
+        alert('Pedido enviado')
+
         
     },
 
@@ -171,8 +186,8 @@ export default {
         btn_brg_add.innerText = '+'
         inputSubmit.type = 'submit'
         inputSubmit.className = 'inpSub'
-        inputSubmit.addEventListener('click', this.submitar)
         inputSubmit.value = 'Enviar Pedido'
+        inputSubmit.addEventListener('click', this.submitarStorage)
 
         // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
         div_btn.appendChild(btn_brg_minus)
@@ -248,11 +263,11 @@ export default {
         this.cuz()
 }
 }
-    const testeUl = document.getElementById('ul_brg').innerHTML
+    // const testeUl = document.getElementById('ul_brg').innerHTML
     // sessionStorage.setItem('')
     // const dataaa = sessionStorage.getItem("testeUl")
 
-    alert(testeUl)
+    // alert('testeUl')
 
 </script>
 
