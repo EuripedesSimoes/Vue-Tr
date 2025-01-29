@@ -68,28 +68,32 @@ export default {
     
     submitarStorage(){
 
-        const divSEC = this.parentElement
+        
 
-        const imgSRC2 = divSEC.querySelector('img')
+        // const imgSRC2 = divSEC.querySelector('img')
         // CERTO const imgSession = document.querySelectorAll('img')
 
+        /*
         let listImgSession = []
         imgSession.forEach( imgs => {
             listImgSession.push(imgs.src)
         })
         sessionStorage.setItem('listImgs', JSON.stringify(listImgSession))
+        */
 
         // const itensLista = Array.from(divSEC.querySelectorAll('ul li')).map(item => item.textContent);
 
-        const infoDiv = {
+        /*const infoDiv = {
         imgSRC2
-        // itensLista
-      }
+        itensLista
+      }*/
+
+
         // Armazena as informações no sessionStorage
-        sessionStorage.setItem('infoDiv', JSON.stringify(infoDiv));
+       /* sessionStorage.setItem('infoDiv', JSON.stringify(infoDiv));
       
         console.log('Informações salvas:', infoDiv)
-
+*/
         // const testeUl = document.getElementById('ul_brg').innerHTML
     // CERTO const testeUl = document.querySelector('.inpSub').value
     // CERTO sessionStorage.setItem('random'+1, testeUl)
@@ -241,7 +245,42 @@ export default {
 
         // Adiciona um evento de clique a cada botão
         botoesSalvar.forEach( (botao) => {
-        botao.addEventListener('click', this.submitarStorage)
+        // botao.addEventListener('click', this.submitarStorage)
+        botao.addEventListener('click', () => {
+            // const div_desc = this.parentElement
+            const div_sec = botao.parentElement
+
+            const nome_lanche = div_sec.querySelector('p').innerText
+            // const nome_lanchestring =  JSON.stringify(nome_lanche)
+            // alert(nome_lanchestring)
+            if(nome_lanche === 'X-Salada') {
+            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
+        }else if(nome_lanche === 'X-Burger'){
+            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
+        } 
+         else if(nome_lanche === 'X-Bacon'){
+            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
+        }
+
+        // Selecionar todos os elementos <li> dentro da <ul>
+        const listItems = div_sec.querySelectorAll('ul li')
+
+        // Criar um array para armazenar as informações
+        let listData = []
+
+        // Iterar sobre os elementos <li> e extraia as informações
+        // Para cada item nos LIs, fazer um push() para o array criado
+        listItems.forEach(item => {
+            listData.push(item.textContent);
+
+            // Armazenar as informações no sessionStorage
+            sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
+            /*sessionStorage.setItem('listData', String(listData))*/  //Assim mostra só as letras
+})
+        // sessionStorage.clear()
+        }
+    
+    )
         })
         // inputSubmit.addEventListener('click', this.submitarStorage)
 

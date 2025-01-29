@@ -4,8 +4,9 @@
 
     <main class="main_penis">
         <div class="penis">
-            <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt="">
-            <p>Sandubão de penis</p>
+            <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
+            <img src="" alt="" id="img_sanduba">
+            <p id="sanduba">Sandubão de penis</p>
             <!-- <p>{{ PV_descontruct }} </p> -->
         </div>
         <CuDashBoard/>
@@ -31,7 +32,32 @@ export default{
         }
     },
     methods: {
-     localTeste(){
+        localTeste(){
+         const mainPen = document.querySelector('.main_penis')
+        let x_lanche = JSON.parse(sessionStorage.getItem('x'))
+        // alert(x_lanche)
+        let p_sand = document.getElementById('sanduba')
+        p_sand.innerText = x_lanche
+        let img_sand = document.getElementById('img_sanduba')
+        if (p_sand.innerText === 'X-Salada'){
+            img_sand.src = "/img/x-salada.18032e04.jpeg"
+            // img_sand.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
+        }else if(p_sand.innerText === 'X-Burger'){
+            img_sand.src = "/img/x-burger.7b5b3440.jpg"
+        }else if(p_sand.innerText === 'X-Bacon'){
+            img_sand.src = "/img/x-bacon.d9425a4f.jpg"
+        }
+
+
+        let listDt = JSON.parse(sessionStorage.getItem('listData'))
+        
+            let li_pedidos = document.createElement('li')
+
+            li_pedidos.innerText = listDt[1]
+
+            mainPen.appendChild(li_pedidos)
+        
+
         // Pegar tal item no sessionStorage pelo --> getItem() 
         // let valor1 = sessionStorage.getItem('random1')
 
@@ -39,22 +65,22 @@ export default{
         // let valorString = String(valor1)
         // alert(valorString)
 
-        let p_sherman = document.getElementById('localP')
+        /*let p_sherman = document.getElementById('localP')*/
         // p_sherman.innerText = valorString
 
         // Para recuperar os dados do sessionStorage
-        let storedListData = JSON.parse(sessionStorage.getItem('listData'))
+        /*let storedListData = JSON.parse(sessionStorage.getItem('listData'))*/
         // let storedListData = sessionStorage.getItem('listData') Assim mostra só as letras
-        p_sherman.innerText = storedListData[1]
-        console.log(storedListData)
+       /* p_sherman.innerText = storedListData[1]
+        console.log(storedListData)*/
 
-        const MPen = document.querySelector('.main_penis')
+        /*const MPen = document.querySelector('.main_penis')
         const srcArmazenados = JSON.parse(sessionStorage.getItem('listImgs'))
         const imgCreated = document.createElement('img')
         imgCreated.src = srcArmazenados[7]
         MPen.appendChild(imgCreated)
 
-      
+      */
         
 
     }
