@@ -63,24 +63,67 @@ export default {
     }
     ,
     methods: {
+
+    
+    
     submitarStorage(){
-        // alert('cu')
+
+        const divSEC = this.parentElement
+
+        const imgSRC2 = divSEC.querySelector('img')
+        // CERTO const imgSession = document.querySelectorAll('img')
+
+        let listImgSession = []
+        imgSession.forEach( imgs => {
+            listImgSession.push(imgs.src)
+        })
+        sessionStorage.setItem('listImgs', JSON.stringify(listImgSession))
+
+        // const itensLista = Array.from(divSEC.querySelectorAll('ul li')).map(item => item.textContent);
+
+        const infoDiv = {
+        imgSRC2
+        // itensLista
+      }
+        // Armazena as informações no sessionStorage
+        sessionStorage.setItem('infoDiv', JSON.stringify(infoDiv));
+      
+        console.log('Informações salvas:', infoDiv)
 
         // const testeUl = document.getElementById('ul_brg').innerHTML
-        const testeUl = document.querySelector('.inpSub').value
-        const testeLi = document.querySelectorAll('li').value
-        // const allUl = document.querySelectorAll('ul')
-        // alert(allUl)
-        // for(let i = 1; i < 4; i++){
-        localStorage.setItem('random'+1, testeUl)
-        localStorage.setItem('random'+2, testeLi)
+    // CERTO const testeUl = document.querySelector('.inpSub').value
+    // CERTO sessionStorage.setItem('random'+1, testeUl)
 
-        // }
-        // const dataaa = sessionStorage.getItem("testeUl")
+        // Selecionar todos os elementos <li> dentro da <ul>
+    // CERTO const listItems = document.querySelectorAll('ul li')
+
+        // Criar um array para armazenar as informações
+    // CERTO let listData = []
+
+        // Iterar sobre os elementos <li> e extraia as informações
+        // Para cada item nos LIs, fazer um push() para o array criado
+    // CERTO listItems.forEach(item => {
+        // CERTO listData.push(item.textContent);
+
+            // Armazenar as informações no sessionStorage
+        // CERTO sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
+            //sessionStorage.setItem('listData', String(listData))  Assim mostra só as letras
+    // CERTO })
+
+        // Vez do SRC das IMGS
+    // CERTO const imgSession = document.querySelectorAll('img')
+
+    // CERTO let listImgSession = []
+    // CERTO imgSession.forEach( imgs => {
+        // CERTO listImgSession.push(imgs.src)
+    // CERTO })
+    // CERTO sessionStorage.setItem('listImgs', JSON.stringify(listImgSession))
+
+        // const secLunch = document.querySelectorAll('.div_Sec_lunch')
+
+        // sessionStorage.clear()
 
         alert('Pedido enviado')
-
-        
     },
 
     async cuz(){
@@ -98,10 +141,12 @@ export default {
     //             document.body.appendChild(div);
     //         });
         this.burger_SS.forEach((burgin_SS) => { 
-            function cu(){
-        console.log(data[1])
+    //         function cu(){
+    //     console.log(data[1]
+            
+    //     )
 
-    }
+    // }
             // alert( burgin_SS.img_src)
 
         //identifica o container para criar os elementos
@@ -157,59 +202,71 @@ export default {
 
 
         //criando os botões de diminuir e adicionar a quantidade de lanches
-        const div_preco_btn = document.createElement('div')
-        div_preco_btn.className = 'div_preco_btn'
-        const btn_teste = document.createElement('button')
-        btn_teste.innerText = 'teste'
-        btn_teste.addEventListener('click', cu)
 
-        //DIV PREÇO
-        const div_preco = document.createElement('div')
-        const h1_preco = document.createElement('h1')
-        h1_preco.innerText = `R$ ${burgin_SS.preço}`
+    //const div_preco_btn = document.createElement('div')
+    //div_preco_btn.className = 'div_preco_btn'
 
-        div_preco.appendChild(h1_preco)
-        div_preco.className = 'div_preco'
+        // const btn_teste = document.createElement('button')
+        // btn_teste.innerText = 'teste'
+        // btn_teste.addEventListener('click', cu)
 
-        //DIV BOTÕES
-        const div_btn = document.createElement('div')
-        const btn_brg_minus = document.createElement('button')
-        let p_quanty = document.createElement('p')
-        // p_quanty.innerText =1
-        // p_quanty.type = 'number'
-        const btn_brg_add = document.createElement('button')
-        const inputSubmit = document.createElement('input')
+        //DIV PREÇO retirado temporariamente
+
+    // const div_preco = document.createElement('div')
+    // const h1_preco = document.createElement('h1')
+    // h1_preco.innerText = `R$ ${burgin_SS.preço}`
+
+    // div_preco.appendChild(h1_preco)
+    // div_preco.className = 'div_preco'
+
+        //DIV BOTÕES retirado temporariamente
+
+    // const div_btn = document.createElement('div')
+    // const btn_brg_minus = document.createElement('button')
+    // let p_quanty = document.createElement('p')
+    // const btn_brg_add = document.createElement('button')
+    const inputSubmit = document.createElement('input')
 
         
-        p_quanty.innerText = "0"
-        btn_brg_minus.innerText = '-'
-        btn_brg_add.innerText = '+'
+    // p_quanty.innerText = "0"
+    // btn_brg_minus.innerText = '-'
+    // btn_brg_add.innerText = '+'
         inputSubmit.type = 'submit'
         inputSubmit.className = 'inpSub'
         inputSubmit.value = 'Enviar Pedido'
-        inputSubmit.addEventListener('click', this.submitarStorage)
 
-        // divContainerDesc.appendChild([btn_brg_minus, p_quanty, btn_brg_add])
-        div_btn.appendChild(btn_brg_minus)
-        div_btn.appendChild(p_quanty)
-        div_btn.appendChild(btn_brg_add)
-        div_btn.className = 'div_btn'
 
-        div_preco_btn.appendChild(div_preco)
-        div_preco_btn.appendChild(div_btn)
-        div_preco_btn.appendChild(btn_teste)
+        // Seleciona todos os botões com a classe 
+        const botoesSalvar = document.querySelectorAll('.inpSub')
 
-        divContainerDesc.appendChild(div_preco_btn)
+        // Adiciona um evento de clique a cada botão
+        botoesSalvar.forEach( (botao) => {
+        botao.addEventListener('click', this.submitarStorage)
+        })
+        // inputSubmit.addEventListener('click', this.submitarStorage)
+
+
+        // div_btn.appendChild(btn_brg_minus)
+        // div_btn.appendChild(p_quanty)
+        // div_btn.appendChild(btn_brg_add)
+        // div_btn.className = 'div_btn'
+
+        /*div_preco_btn.appendChild(div_preco)
+        div_preco_btn.appendChild(div_btn)*/
+        // div_preco_btn.appendChild(btn_teste)
+
+        /*divContainerDesc.appendChild(div_preco_btn)*/
+        divContainerDesc.appendChild(inputSubmit)
 
         //colocando a DIV criada dentro da DIV principal
         div2lunch.appendChild(divContainerImg)
         div2lunch.appendChild(divContainerDesc)
 
 
-        divMainlunch.appendChild(inputSubmit)
+        // divMainlunch.appendChild(inputSubmit)
         divMainlunch.appendChild(div2lunch)
 
-        function more(){
+       /* function more(){
             // alert(p_quanty.innerText)
 
             //pega o texto dentro do P_QUANTY e transforma em numero
@@ -219,13 +276,9 @@ export default {
             //novo texto dentro de P_QUANTY é esse novo valor
             p_quanty.innerText = novoValor
             
-            // p_quanty.innerText = p_quanty.innerText + 1
-            // if (p_quanty === 10) {
-            //     stop
-            // }
-        }
+        }*/
         
-        function min(){
+        /*function min(){
         let valorAtual = Number(p_quanty.innerText)
         let novoValor = valorAtual - 1
             if(novoValor > 0){
@@ -239,7 +292,7 @@ export default {
             }
         }
         btn_brg_add.addEventListener('click', more)
-        btn_brg_minus.addEventListener('click', min)
+        btn_brg_minus.addEventListener('click', min)*/
         
         // const bodyy = document.body.style.backgroundColor = 'black'
         // const bodyy = document.querySelector('main')

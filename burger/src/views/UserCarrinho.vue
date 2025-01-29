@@ -32,24 +32,40 @@ export default{
     },
     methods: {
      localTeste(){
-        let valor1 = localStorage.getItem('random')
-        let valorString = String(valor1)
+        // Pegar tal item no sessionStorage pelo --> getItem() 
+        // let valor1 = sessionStorage.getItem('random1')
+
+        // Transformar o valor em STRING
+        // let valorString = String(valor1)
         // alert(valorString)
+
         let p_sherman = document.getElementById('localP')
-        p_sherman.innerText = valorString
+        // p_sherman.innerText = valorString
+
+        // Para recuperar os dados do sessionStorage
+        let storedListData = JSON.parse(sessionStorage.getItem('listData'))
+        // let storedListData = sessionStorage.getItem('listData') Assim mostra só as letras
+        p_sherman.innerText = storedListData[1]
+        console.log(storedListData)
+
+        const MPen = document.querySelector('.main_penis')
+        const srcArmazenados = JSON.parse(sessionStorage.getItem('listImgs'))
+        const imgCreated = document.createElement('img')
+        imgCreated.src = srcArmazenados[7]
+        MPen.appendChild(imgCreated)
+
+      
+        
 
     }
-        // const PV_descontruct = PedidosView
 
     },
     components: {
         CuDashBoard
-        // PedidosView
     }
     ,
     mounted() {
         this.localTeste()
-        
 }
     
 
