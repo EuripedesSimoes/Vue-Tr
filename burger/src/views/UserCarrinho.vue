@@ -7,6 +7,7 @@
             <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
             <img src="" alt="" id="img_sanduba">
             <p id="sanduba">Sandubão de penis</p>
+            <ul id="ul_sanduba"></ul>
             <!-- <p>{{ PV_descontruct }} </p> -->
         </div>
         <CuDashBoard/>
@@ -33,7 +34,7 @@ export default{
     },
     methods: {
         localTeste(){
-         const mainPen = document.querySelector('.main_penis')
+        //  const mainPen = document.querySelector('.main_penis')
         let x_lanche = JSON.parse(sessionStorage.getItem('x'))
         // alert(x_lanche)
         let p_sand = document.getElementById('sanduba')
@@ -51,12 +52,29 @@ export default{
 
         let listDt = JSON.parse(sessionStorage.getItem('listData'))
         
-            let li_pedidos = document.createElement('li')
+            // let li_pedidos = document.createElement('li')
 
-            li_pedidos.innerText = listDt[1]
+            // li_pedidos.innerText = listDt[1]
 
-            mainPen.appendChild(li_pedidos)
-        
+            
+            // mainPen.appendChild(li_pedidos)
+
+            //código para criar os LI's 
+            let i = -1
+            const SecPen = document.querySelector('.penis')
+            while(i<2){
+                const ul_sand = document.getElementById('ul_sanduba')
+
+                i = i + 1
+                let li_pedidos = document.createElement('li')
+
+                li_pedidos.innerText = listDt[i]
+
+                ul_sand.appendChild(li_pedidos)
+                SecPen.appendChild(ul_sand)
+
+                // console.log(listDt[i])
+            }
 
         // Pegar tal item no sessionStorage pelo --> getItem() 
         // let valor1 = sessionStorage.getItem('random1')
@@ -117,8 +135,8 @@ export default{
 
 .main_penis {
     margin: 0 auto;
-    height: 200px;
-    width: 300px;
+    height: 400px;
+    width: 700px;
     background-color: rgb(96, 114, 219);
     flex-wrap: wrap;
     display: flex;
@@ -132,8 +150,8 @@ export default{
 
 .penis {
     margin: 0 auto;
-    height: 100px;
-    width: 200px;
+    height:150px;
+    width: 690px;
     background-color: rgb(206, 206, 206);
     display: flex;
     justify-content: space-around;
