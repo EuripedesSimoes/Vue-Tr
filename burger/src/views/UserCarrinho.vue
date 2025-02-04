@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// import { forEach } from 'core-js/core/array';
 import CuDashBoard from '../components/CuDashBoard.vue'
 // import PedidosView from './PedidosView.vue';
 // import { useCart } from '@/assets/composables/useCart';
@@ -34,24 +35,69 @@ export default{
     },
     methods: {
         localTeste(){
-        //  const mainPen = document.querySelector('.main_penis')
-        let x_lanche = JSON.parse(sessionStorage.getItem('x'))
-        // alert(x_lanche)
-        let p_sand = document.getElementById('sanduba')
-        p_sand.innerText = x_lanche
-        let img_sand = document.getElementById('img_sanduba')
-        if (p_sand.innerText === 'X-Salada'){
-            img_sand.src = "/img/x-salada.18032e04.jpeg"
-            // img_sand.src = 'https://www.comidaereceitas.com.br/wp-content/uploads/2008/06/HAMBURGUER-VEGETARIANO-780x439.jpg'
-        }else if(p_sand.innerText === 'X-Burger'){
-            img_sand.src = "/img/x-burger.7b5b3440.jpg"
-        }else if(p_sand.innerText === 'X-Bacon'){
-            img_sand.src = "/img/x-bacon.d9425a4f.jpg"
+            // let x_lanche = JSON.parse(sessionStorage.getItem('x'))
+            // alert(x_lanche)
+            // let p_sand = document.getElementById('sanduba')
+            // p_sand.innerText = x_lanche
+            // let img_sand = document.getElementById('img_sanduba')
+            // if (p_sand.innerText === 'X-Salada'){
+            //     img_sand.src = "/img/x-salada.18032e04.jpeg"
+            // }else if(p_sand.innerText === 'X-Burger'){
+            //     img_sand.src = "/img/x-burger.7b5b3440.jpg"
+            // }else if(p_sand.innerText === 'X-Bacon'){
+            //     img_sand.src = "/img/x-bacon.d9425a4f.jpg"
+            // }
+            
+            
+        const mainPen = document.querySelector('.main_penis')
+        // let listDt = JSON.parse(sessionStorage.getItem('listData'))
+        const img_sand = document.getElementById('img_sanduba')
+        
+        for (let ix = 1; ix<10; ix++){
+            const itemKey = `lanche${ix}`
+            const listKey = `Listdata${ix}`
+            const itemData = sessionStorage.getItem(itemKey)
+            const ListData = sessionStorage.getItem(listKey)
+
+            if(itemData, ListData) {
+                const item = JSON.parse(itemData)
+                const list = JSON.parse(ListData)
+
+                let p_sand = document.getElementById('sanduba')
+                p_sand.innerText = String(item)
+
+                if (p_sand.innerText === 'X-Salada'){
+                    img_sand.src = "/img/x-salada.18032e04.jpeg"
+                    list.innerText = ListData[1]
+            }
+                else if(p_sand.innerText === 'X-Burger'){
+                    img_sand.src = "/img/x-burger.7b5b3440.jpg"
+                    list.innerText = ListData[2]
+                }else if(p_sand.innerText === 'X-Bacon'){
+                    img_sand.src = "/img/x-bacon.d9425a4f.jpg"
+                    list.innerText = ListData[3]
+                }
+                
+                
+                const SecPen = document.querySelector('.penis')
+                SecPen.appendChild(img_sand)
+            
+            
+                // let i = -1
+                // while(i<2){
+                    const ul_sand = document.getElementById('ul_sanduba')
+
+                    // i = i + 1
+                    let li_pedidos = document.createElement('li')
+
+                    // li_pedidos.innerText = list[i]
+
+                    ul_sand.appendChild(li_pedidos)
+                    SecPen.appendChild(ul_sand)
+                    mainPen.appendChild(SecPen)
+            // }
         }
 
-
-        let listDt = JSON.parse(sessionStorage.getItem('listData'))
-        
             // let li_pedidos = document.createElement('li')
 
             // li_pedidos.innerText = listDt[1]
@@ -60,18 +106,7 @@ export default{
             // mainPen.appendChild(li_pedidos)
 
             //código para criar os LI's 
-            let i = -1
-            const SecPen = document.querySelector('.penis')
-            while(i<2){
-                const ul_sand = document.getElementById('ul_sanduba')
-
-                i = i + 1
-                let li_pedidos = document.createElement('li')
-
-                li_pedidos.innerText = listDt[i]
-
-                ul_sand.appendChild(li_pedidos)
-                SecPen.appendChild(ul_sand)
+            
 
                 // console.log(listDt[i])
             }
@@ -140,11 +175,6 @@ export default{
     background-color: rgb(96, 114, 219);
     flex-wrap: wrap;
     display: flex;
-    img {
-    height: 90px;
-    width: 100px;
-
-    }
 
 }
 
@@ -156,6 +186,12 @@ export default{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    img {
+    height: 90px;
+    width: 100px;
+
+    }
+    
 }
 
 </style>

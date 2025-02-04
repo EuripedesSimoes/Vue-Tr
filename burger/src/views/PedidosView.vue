@@ -244,7 +244,7 @@ export default {
         const botoesSalvar = document.querySelectorAll('.inpSub')
 
         // Adiciona um evento de clique a cada botão
-        botoesSalvar.forEach( (botao) => {
+    botoesSalvar.forEach( (botao) => {
         // botao.addEventListener('click', this.submitarStorage)
         botao.addEventListener('click', () => {
             // const div_desc = this.parentElement
@@ -253,30 +253,36 @@ export default {
             const nome_lanche = div_sec.querySelector('p').innerText
             // const nome_lanchestring =  JSON.stringify(nome_lanche)
             // alert(nome_lanchestring)
+
+            // Selecionar todos os elementos <li> dentro da <ul>
+            const listItems = div_sec.querySelectorAll('ul li')
+
+            // Criar um array para armazenar as informações
+            let listData = []
+
+            listItems.forEach(item => {
+                listData.push(item.textContent);
+
+            // Armazenar as informações no sessionStorage
+            // sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
+            /*sessionStorage.setItem('listData', String(listData))*/  //Assim mostra só as letras
+    })
+
             if(nome_lanche === 'X-Salada') {
-            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
-        }else if(nome_lanche === 'X-Burger'){
-            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
-        } 
-         else if(nome_lanche === 'X-Bacon'){
-            sessionStorage.setItem('x', JSON.stringify(nome_lanche))
-        }
-
-        // Selecionar todos os elementos <li> dentro da <ul>
-        const listItems = div_sec.querySelectorAll('ul li')
-
-        // Criar um array para armazenar as informações
-        let listData = []
+                sessionStorage.setItem('lanche1', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('Listdata1',JSON.stringify(listData))
+            }else if(nome_lanche === 'X-Burger'){
+                sessionStorage.setItem('lanche2', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('Listdata2',JSON.stringify(listData))
+            } 
+            else if(nome_lanche === 'X-Bacon'){
+                sessionStorage.setItem('lanche3', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('Listdata3',JSON.stringify(listData))
+            }
 
         // Iterar sobre os elementos <li> e extraia as informações
         // Para cada item nos LIs, fazer um push() para o array criado
-        listItems.forEach(item => {
-            listData.push(item.textContent);
-
-            // Armazenar as informações no sessionStorage
-            sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
-            /*sessionStorage.setItem('listData', String(listData))*/  //Assim mostra só as letras
-})
+        
         // sessionStorage.clear()
         }
     
