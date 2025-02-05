@@ -54,8 +54,8 @@ export default{
         const img_sand = document.getElementById('img_sanduba')
         
         for (let ix = 1; ix<10; ix++){
-            const itemKey = `lanche${ix}`
-            const listKey = `Listdata${ix}`
+            let itemKey = `lanche${ix}`
+            let listKey = `Listdata${ix}`
             const itemData = sessionStorage.getItem(itemKey)
             const ListData = sessionStorage.getItem(listKey)
 
@@ -64,39 +64,111 @@ export default{
                 const list = JSON.parse(ListData)
 
                 let p_sand = document.getElementById('sanduba')
+                let ul_sand = document.getElementById('ul_sanduba')
                 p_sand.innerText = String(item)
 
                 if (p_sand.innerText === 'X-Salada'){
                     img_sand.src = "/img/x-salada.18032e04.jpeg"
-                    list.innerText = ListData[1]
+                    const li_pao = document.createElement('li')
+                    li_pao.innerText = String(list[0])
+                    const li_carne = document.createElement('li')
+                    li_carne.innerText = String(list[1])
+                    const li_extra = document.createElement('li')
+                    li_extra.innerText = String(list[2])
+                    ul_sand.appendChild(li_pao)
+                    ul_sand.appendChild(li_carne)
+                    ul_sand.appendChild(li_extra)
+                    // list.innerText = ListData[1]
             }
                 else if(p_sand.innerText === 'X-Burger'){
                     img_sand.src = "/img/x-burger.7b5b3440.jpg"
-                    list.innerText = ListData[2]
+                    const li_pao = document.createElement('li')
+                    li_pao.innerText = String(list[0])
+                    const li_carne = document.createElement('li')
+                    li_carne.innerText = String(list[1])
+                    const li_extra = document.createElement('li')
+                    li_extra.innerText = String(list[2])
+                    ul_sand.appendChild(li_pao)
+                    ul_sand.appendChild(li_carne)
+                    ul_sand.appendChild(li_extra)
+                    // list.innerText = ListData[2]
                 }else if(p_sand.innerText === 'X-Bacon'){
                     img_sand.src = "/img/x-bacon.d9425a4f.jpg"
-                    list.innerText = ListData[3]
+                    const li_pao = document.createElement('li')
+                    li_pao.innerText = String(list[0])
+                    const li_carne = document.createElement('li')
+                    li_carne.innerText = String(list[1])
+                    const li_extra = document.createElement('li')
+                    li_extra.innerText = String(list[2])
+                    ul_sand.appendChild(li_pao)
+                    ul_sand.appendChild(li_carne)
+                    ul_sand.appendChild(li_extra)
+                    // list.innerText = ListData[3]
                 }
+            }
                 
+              
+        }  
+                // const SecPen = document.querySelector('.penis')
+                const div_tr = document.createElement('div')   
+                const img_tr = document.createElement('img')  
+                const p_tr = document.createElement('p')  
+                const ul_tr = document.createElement('ul')  
+                const li_tr = document.createElement('li')
+
+                //1- pegar os itensKey e o listData que terminam com o mesmo numero
+                //2- colocar cada um deles em uma div separada com o for(i=1; i<10; i++)
+                for (let ix = 1; ix<10; ix++){
+                    let itKey = `lanche${ix}`
+                    let ltKey = `Listdata${ix}`
+                    const itData = sessionStorage.getItem(itKey)
+                    const LtData = sessionStorage.getItem(ltKey)
+
+                    if(`lanche${ix}` == true){
+                        
+                        const main_tr = document.createElement('div')
+                        let it = JSON.parse(itData)
+                        let lt = JSON.parse(LtData)
+
+                        img_tr.src = "/img/x-bacon.d9425a4f.jpg"
+
+                        p_tr.innerText = String(it)
+                        li_tr.innerText = lt
+                        ul_tr.appendChild(li_tr)
+
+                        div_tr.appendChild(img_tr)
+                        div_tr.appendChild(p_tr)
+                        div_tr.appendChild(ul_tr)
+
+
+                        main_tr.appendChild(div_tr)
+                        mainPen.appendChild(main_tr)
+
+                    }
+                    
+                }
+
+
                 
-                const SecPen = document.querySelector('.penis')
-                SecPen.appendChild(img_sand)
+
+
+                // SecPen.appendChild(div_tr)
+                // SecPen.appendChild(img_sand)
             
             
                 // let i = -1
                 // while(i<2){
-                    const ul_sand = document.getElementById('ul_sanduba')
+                    // const ul_sand = document.getElementById('ul_sanduba')
 
                     // i = i + 1
-                    let li_pedidos = document.createElement('li')
+                    // let li_pedidos = document.createElement('li')
 
                     // li_pedidos.innerText = list[i]
 
-                    ul_sand.appendChild(li_pedidos)
-                    SecPen.appendChild(ul_sand)
-                    mainPen.appendChild(SecPen)
+                    // ul_sand.appendChild(li_pedidos)
+                    // SecPen.appendChild(ul_sand)
+                    // mainPen.appendChild(main_tr)
             // }
-        }
 
             // let li_pedidos = document.createElement('li')
 
@@ -136,8 +208,6 @@ export default{
       */
         
 
-    }
-
     },
     components: {
         CuDashBoard
@@ -146,9 +216,8 @@ export default{
     mounted() {
         this.localTeste()
 }
-    
-
 }
+
 //    const p_storage = document.getElementById('localText')
 //       p_storage.innerText = 'abb'
 //    alert(p_storage.innerText)
