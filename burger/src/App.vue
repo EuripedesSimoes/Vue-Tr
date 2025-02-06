@@ -428,7 +428,12 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-
+.divd {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    margin:10px
+}
 .inpSub {
   height: 50px;
   width: auto;
