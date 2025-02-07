@@ -148,7 +148,95 @@ export default{
                     
                 }
 
+           /*          
+            //criar um id e fazer um .push() no fim, imaginar que o valor da chave id ja é 
+            //id = [id1,id2,id3]
+            const mainId = JSON.parse(sessionStorage.getItem('Id'))
+            let mainIdnovo = []
+            mainIdnovo.push(mainId)
 
+            // alert(mainId)
+
+            mainIdnovo.forEach( subId => {
+                // alert(subId)
+
+                //1- pegar os itensKey e o listData que terminam com o mesmo numero
+                //2- colocar cada um deles em uma div separada com o for(i=1; i<10; i++)
+                let ix = 0
+                if(mainId.includes('X-Salada')){
+                    ix = 1
+                    let itKey = `lanche${ix}`
+                    let ltKey = `Listdata${ix}`
+                    const itData = sessionStorage.getItem(itKey)
+                    const LtData = sessionStorage.getItem(ltKey)
+
+                    const main_tr = document.createElement('div')
+                    let it = JSON.parse(itData)
+                    let lt = JSON.parse(LtData)
+
+                    // img_tr.src = "/img/x-bacon.d9425a4f.jpg"
+
+                    p_tr.innerText = String(it)
+                    li_tr.innerText = lt
+                    ul_tr.appendChild(li_tr)
+
+                    div_tr.appendChild(img_tr)
+                    div_tr.appendChild(p_tr)
+                    div_tr.appendChild(ul_tr)
+
+
+                    main_tr.appendChild(div_tr)
+                    mainPen.appendChild(main_tr)
+                    // console.log(subId)
+            }else if(subId.lenght===2 || mainId.includes('X-Salada')){
+                ix = 2
+                    let itKey = `lanche${ix}`
+                    let ltKey = `Listdata${ix}`
+                    const itData = sessionStorage.getItem(itKey)
+                    const LtData = sessionStorage.getItem(ltKey)
+
+                    const main_tr = document.createElement('div')
+                    let it = JSON.parse(itData)
+                    let lt = JSON.parse(LtData)
+
+                    // img_tr.src = "/img/x-bacon.d9425a4f.jpg"
+
+                    p_tr.innerText = String(it)
+                    li_tr.innerText = lt
+                    ul_tr.appendChild(li_tr)
+
+                    div_tr.appendChild(img_tr)
+                    div_tr.appendChild(p_tr)
+                    div_tr.appendChild(ul_tr)
+
+
+                    main_tr.appendChild(div_tr)
+                    mainPen.appendChild(main_tr)
+
+            }
+            
+            })*/
+                
+            //criar um id e fazer um .push() no fim, imaginar que o valor da chave id ja é 
+            //id = [id1,id2,id3]
+            //daí para cada id: id.forEach(sub_id => { 
+            //const div = document.createelement('div')
+
+            //pegar o numero do sub_id (Ex: push(sub_id[2])
+            //let i = sub_id[2]
+
+            //for(let ix=1; ix<5; ix++){
+                        
+                    //const mainPen = document.querySelector('.main_penis')
+                    //  const div = document.createElement('div')
+                    //  div.className = 'divd'
+                    //  mainPen.appendChild(div)
+
+                    //}
+
+
+            //}
+            //)
                 
 
 
