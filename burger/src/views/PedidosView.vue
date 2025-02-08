@@ -254,32 +254,8 @@ export default {
             // const nome_lanchestring =  JSON.stringify(nome_lanche)
             // alert(nome_lanchestring)
 
-            // Selecionar todos os elementos <li> dentro da <ul>
-            const AllItems = div_sec.querySelectorAll('ul li')
-
-            // Criar um array para armazenar as informações
-            let listData = []
             
-            let listData2 = []
-            
-            let listData3 = []
-            // let listSubId = []
 
-
-            AllItems.forEach(item => {
-                listData.push(item.textContent);
-
-            // Armazenar as informações no sessionStorage
-            // sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
-            /*sessionStorage.setItem('listData', String(listData))*/  //Assim mostra só as letras
-            })
-            AllItems.forEach(item => {
-                listData2.push(item.textContent);
-            })
-
-            AllItems.forEach(item => {
-                listData3.push(item.textContent);
-            })
 
             
 
@@ -299,16 +275,13 @@ export default {
 
                 if(nome_lanche === 'X-Salada') {
                 sessionStorage.setItem('lanche1', JSON.stringify(nome_lanche))
-                sessionStorage.setItem('Listdata1',JSON.stringify(listData))
                 // listSubId.push(sessionStorage.setItem('Id'))
             }else if(nome_lanche === 'X-Burger'){
                 sessionStorage.setItem('lanche2', JSON.stringify(nome_lanche))
-                sessionStorage.setItem('Listdata2',JSON.stringify(listData2))
                 // listSubId.push(sessionStorage.setItem('Id'))
             } 
             else if(nome_lanche === 'X-Bacon'){
                 sessionStorage.setItem('lanche3', JSON.stringify(nome_lanche))
-                sessionStorage.setItem('Listdata3',JSON.stringify(listData3))
                 // listSubId.push(sessionStorage.setItem('Id'))
             }
             }

@@ -429,10 +429,14 @@ body {
   color: #2c3e50;
 }
 .divd {
-    width: 30px;
-    height: 30px;
+    width: 200px;
+    height: 200px;
     background-color: red;
-    margin:10px
+    margin:10px;
+    img{
+      width: 100px;
+      height: 100px;
+    }
 }
 .inpSub {
   height: 50px;

@@ -48,28 +48,56 @@ export default{
             //     img_sand.src = "/img/x-bacon.d9425a4f.jpg"
             // }
             
+
             
         const mainPen = document.querySelector('.main_penis')
         // let listDt = JSON.parse(sessionStorage.getItem('listData'))
         const img_sand = document.getElementById('img_sanduba')
+
+
+        let mainId = JSON.parse(sessionStorage.getItem('Id'))
+
+        mainId.forEach( subId => {
+            const div = document.createElement('div')
+            const p = document.createElement('p')
+            const img_sand = document.getElementById('img_sanduba')
+            div.className = 'divd'
+            // alert(subId)
+            p.innerText = subId
+            div.appendChild(p)
+            
+            mainPen.appendChild(div)
+
+            if (p.innerText === 'X-Salada'){
+                img_sand.src = "/img/x-salada.18032e04.jpeg"
+            }
+            else if(p.innerText === 'X-Burger'){
+                img_sand.src = "/img/x-burger.7b5b3440.jpg"
+            }else if(p.innerText === 'X-Bacon'){
+                img_sand.src = "/img/x-bacon.d9425a4f.jpg"
+            }
+                
+            div.appendChild(img_sand)
+            
+        })
         
         for (let ix = 1; ix<10; ix++){
             let itemKey = `lanche${ix}`
-            let listKey = `Listdata${ix}`
+            // let listKey = `Listdata${ix}`
             const itemData = sessionStorage.getItem(itemKey)
-            const ListData = sessionStorage.getItem(listKey)
+            // const ListData = sessionStorage.getItem(listKey)
 
-            if(itemData, ListData) {
+            if(itemData) {
                 const item = JSON.parse(itemData)
-                const list = JSON.parse(ListData)
+                // const list = JSON.parse(ListData)
 
                 let p_sand = document.getElementById('sanduba')
-                let ul_sand = document.getElementById('ul_sanduba')
+                // let ul_sand = document.getElementById('ul_sanduba')
                 p_sand.innerText = String(item)
 
                 if (p_sand.innerText === 'X-Salada'){
                     img_sand.src = "/img/x-salada.18032e04.jpeg"
-                    const li_pao = document.createElement('li')
+                    /*const li_pao = document.createElement('li')
                     li_pao.innerText = String(list[0])
                     const li_carne = document.createElement('li')
                     li_carne.innerText = String(list[1])
@@ -77,12 +105,12 @@ export default{
                     li_extra.innerText = String(list[2])
                     ul_sand.appendChild(li_pao)
                     ul_sand.appendChild(li_carne)
-                    ul_sand.appendChild(li_extra)
+                    ul_sand.appendChild(li_extra)*/
                     // list.innerText = ListData[1]
             }
                 else if(p_sand.innerText === 'X-Burger'){
                     img_sand.src = "/img/x-burger.7b5b3440.jpg"
-                    const li_pao = document.createElement('li')
+                    /*const li_pao = document.createElement('li')
                     li_pao.innerText = String(list[0])
                     const li_carne = document.createElement('li')
                     li_carne.innerText = String(list[1])
@@ -90,11 +118,11 @@ export default{
                     li_extra.innerText = String(list[2])
                     ul_sand.appendChild(li_pao)
                     ul_sand.appendChild(li_carne)
-                    ul_sand.appendChild(li_extra)
+                    ul_sand.appendChild(li_extra)*/
                     // list.innerText = ListData[2]
                 }else if(p_sand.innerText === 'X-Bacon'){
                     img_sand.src = "/img/x-bacon.d9425a4f.jpg"
-                    const li_pao = document.createElement('li')
+                    /*const li_pao = document.createElement('li')
                     li_pao.innerText = String(list[0])
                     const li_carne = document.createElement('li')
                     li_carne.innerText = String(list[1])
@@ -103,7 +131,7 @@ export default{
                     ul_sand.appendChild(li_pao)
                     ul_sand.appendChild(li_carne)
                     ul_sand.appendChild(li_extra)
-                    // list.innerText = ListData[3]
+                    // list.innerText = ListData[3]*/
                 }
             }
                 
@@ -120,20 +148,20 @@ export default{
                 //2- colocar cada um deles em uma div separada com o for(i=1; i<10; i++)
                 for (let ix = 1; ix<10; ix++){
                     let itKey = `lanche${ix}`
-                    let ltKey = `Listdata${ix}`
+                    // let ltKey = `Listdata${ix}`
                     const itData = sessionStorage.getItem(itKey)
-                    const LtData = sessionStorage.getItem(ltKey)
+                    // const LtData = sessionStorage.getItem(ltKey)
 
                     if(`lanche${ix}` == true){
                         
                         const main_tr = document.createElement('div')
                         let it = JSON.parse(itData)
-                        let lt = JSON.parse(LtData)
+                        // let lt = JSON.parse(LtData)
 
                         img_tr.src = "/img/x-bacon.d9425a4f.jpg"
 
                         p_tr.innerText = String(it)
-                        li_tr.innerText = lt
+                        // li_tr.innerText = lt
                         ul_tr.appendChild(li_tr)
 
                         div_tr.appendChild(img_tr)
