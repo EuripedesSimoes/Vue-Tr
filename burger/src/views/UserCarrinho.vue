@@ -176,6 +176,44 @@ export default{
                     
                 }
 
+                
+        // let mainId = JSON.parse(sessionStorage.getItem('Id'))
+        // let arra = [mainId]
+
+        // arra.forEach( subId => {
+        //     for(let ix=0;ix<3;ix++){
+            
+        //     if(subId[ix] !== undefined){
+        //         alert(subId[ix])
+            
+        //     const div = document.createElement('div')
+        //     const ps = document.createElement('p')
+        //     const img_sandu = document.createElement('img')
+        //     div.className = 'divd'
+        //     // alert(subId)
+            
+        //     ps.innerText = subId[ix]
+            
+
+        //     if (ps.innerText === 'X-Salada'){
+        //         img_sandu.src = "/img/x-salada.18032e04.jpeg"
+        //     }
+        //     else if(ps.innerText === 'X-Burger'){
+        //         img_sandu.src = "/img/x-burger.7b5b3440.jpg"
+        //     }else if(ps.innerText === 'X-Bacon'){
+        //         img_sandu.src = "/img/x-bacon.d9425a4f.jpg"
+        //     }
+                
+            
+        //     div.appendChild(ps)
+        //     div.appendChild(img_sandu)
+            
+        //     mainPen.appendChild(div)
+        //     }
+        // }
+        // })
+        
+
            /*          
             //criar um id e fazer um .push() no fim, imaginar que o valor da chave id ja é 
             //id = [id1,id2,id3]
