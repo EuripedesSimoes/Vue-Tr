@@ -2,7 +2,7 @@
     <pre>{{ cart }}</pre>
     
 
-    <main class="main_pe">
+    <main class="main_pen">
         <div class="pe">
             <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
             <img src="" alt="" id="img_sanduba">
@@ -35,22 +35,9 @@ export default{
     },
     methods: {
         localTeste(){
-            // let x_lanche = JSON.parse(sessionStorage.getItem('x'))
-            // alert(x_lanche)
-            // let p_sand = document.getElementById('sanduba')
-            // p_sand.innerText = x_lanche
-            // let img_sand = document.getElementById('img_sanduba')
-            // if (p_sand.innerText === 'X-Salada'){
-            //     img_sand.src = "/img/x-salada.18032e04.jpeg"
-            // }else if(p_sand.innerText === 'X-Burger'){
-            //     img_sand.src = "/img/x-burger.7b5b3440.jpg"
-            // }else if(p_sand.innerText === 'X-Bacon'){
-            //     img_sand.src = "/img/x-bacon.d9425a4f.jpg"
-            // }
-            
-
         
-        const mainPen = document.querySelector('.main_pe')
+        const mainPen = document.querySelector('.main_pen')
+        const pe = document.querySelector('.pe')
          // Para recuperar os dados do sessionStorage
         // let storedListData = JSON.parse(sessionStorage.getItem('listData'))
         // storedListData = sessionStorage.getItem('listData')
@@ -72,35 +59,68 @@ export default{
 
             const ul = document.createElement('ul')
             const li_pao = document.createElement('li')
-            // const li_carne = document.createElement('li')
-            // const li_extra = document.createElement('li')
-            ul.appendChild(li_pao)
-            // ul.appendChild(li_carne)
-            // ul.appendChild(li_extra)
+            const li_carne = document.createElement('li')
+            const li_extra = document.createElement('li')
+            
+            //criando os botões de diminuir e adicionar a quantidade de lanches
+
+            const div_preco_btn = document.createElement('div')
+            div_preco_btn.className = 'div_preco_btn'
+
+            const btn_teste = document.createElement('button')
+            btn_teste.innerText = 'teste'
+            btn_teste.addEventListener('click', cu)
+
+        //DIV PREÇO retirado temporariamente
+
+            const div_preco = document.createElement('div')
+            const h1_preco = document.createElement('h1')
+            h1_preco.innerText = `R$ ${burgin_SS.preço}`
+
+            div_preco.appendChild(h1_preco)
+            div_preco.className = 'div_preco'
+            
             // alert(subId)
             
-            // let storedListData = JSON.parse(sessionStorage.getItem('listItems1'))
+            let storedListData1 = JSON.parse(sessionStorage.getItem('listItems1'))
+            let storedListData2 = JSON.parse(sessionStorage.getItem('listItems2'))
+            let storedListData3 = JSON.parse(sessionStorage.getItem('listItems3'))
             ps.innerText = subId[ix]
             
             if (ps.innerText === 'X-Salada'){
                 // storedListData = sessionStorage.getItem('listData')
                 img_sandu.src = "/img/x-salada.18032e04.jpeg"
-                li_pao.innerText = 'storedListData'+[ix+1]
+                li_pao.innerText = storedListData1[0]
+                li_carne.innerText = storedListData1[1]
+                li_extra.innerText = storedListData1[2]
             }
             else if(ps.innerText === 'X-Burger'){
                 img_sandu.src = "/img/x-burger.7b5b3440.jpg"
-            }else if(ps.innerText === 'X-Bacon'){
+                li_pao.innerText = storedListData2[0]
+                li_carne.innerText = storedListData2[1]
+                li_extra.innerText = storedListData2[2]
+            }
+            else if(ps.innerText === 'X-Bacon'){
                 img_sandu.src = "/img/x-bacon.d9425a4f.jpg"
+                li_pao.innerText = storedListData3[0]
+                li_carne.innerText = storedListData3[1]
+                li_extra.innerText = storedListData3[2]
             }
 
             //criando as Li's
             // Pega do listData (EX: listData1), pega as posiçoes de cada item e coloca lá ( EX: li_pao.innerText = String(list[0]) ) 
             // alert(storedListData)
-            div.appendChild(ps)
+
             div.appendChild(img_sandu)
+            div.appendChild(ps)
+            
+            ul.appendChild(li_pao)
+            ul.appendChild(li_carne)
+            ul.appendChild(li_extra)
             div.appendChild(ul)
             
-            mainPen.appendChild(div)
+            pe.appendChild(div)
+            mainPen.appendChild(pe)
             }
         }
         })
@@ -185,7 +205,7 @@ export default{
 
             //for(let ix=1; ix<5; ix++){
                         
-                    //const mainPen = document.querySelector('.main_pe')
+                    //const mainPen = document.querySelector('.main_pen')
                     //  const div = document.createElement('div')
                     //  div.className = 'divd'
                     //  mainPen.appendChild(div)
@@ -245,7 +265,7 @@ export default{
        /* p_sherman.innerText = storedListData[1]
         console.log(storedListData)*/
 
-        /*const MPen = document.querySelector('.main_pe')
+        /*const MPen = document.querySelector('.main_pen')
         const srcArmazenados = JSON.parse(sessionStorage.getItem('listImgs'))
         const imgCreated = document.createElement('img')
         imgCreated.src = srcArmazenados[7]
@@ -283,29 +303,28 @@ export default{
     box-sizing: 0;
 }
 
-.main_pe {
+.main_pen {
     margin: 0 auto;
-    height: 400px;
+    height: auto;
     width: 800px;
     background-color: rgb(96, 114, 219);
     flex-wrap: wrap;
     display: flex;
-
 }
 
 .pe {
     margin: 0 auto;
-    height:150px;
+    height:auto;
     width: 750px;
     background-color: rgb(206, 206, 206);
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    img {
+    /* img {
     height: 90px;
     width: 100px;
-
-    }
+    } */
     
 }
 

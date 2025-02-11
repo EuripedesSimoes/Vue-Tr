@@ -429,13 +429,23 @@ body {
   color: #2c3e50;
 }
 .divd {
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    margin:10px;
+    width: 70%;
+    height: 150px;
+    background-color: rgba(255, 0, 0, 0.534);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
     img{
-      width: 100px;
-      height: 100px;
+      width: 125px;
+      height: 125px;
+    }
+    li{
+      margin: 10px;
+      list-style: none;
+      font-size: 19px;
     }
 }
 .inpSub {
