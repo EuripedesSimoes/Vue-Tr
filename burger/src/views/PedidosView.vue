@@ -95,39 +95,22 @@ export default {
         console.log('Informações salvas:', infoDiv)
 */
         // const testeUl = document.getElementById('ul_brg').innerHTML
-    // CERTO const testeUl = document.querySelector('.inpSub').value
-    // CERTO sessionStorage.setItem('random'+1, testeUl)
-
-        // Selecionar todos os elementos <li> dentro da <ul>
-    // CERTO const AllItems = document.querySelectorAll('ul li')
-
-        // Criar um array para armazenar as informações
-    // CERTO let listData = []
-
-        // Iterar sobre os elementos <li> e extraia as informações
-        // Para cada item nos LIs, fazer um push() para o array criado
-    // CERTO AllItems.forEach(item => {
-        // CERTO listData.push(item.textContent);
-
-            // Armazenar as informações no sessionStorage
-        // CERTO sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
-            //sessionStorage.setItem('listData', String(listData))  Assim mostra só as letras
-    // CERTO })
+    
 
         // Vez do SRC das IMGS
-    // CERTO const imgSession = document.querySelectorAll('img')
+    /*const imgSession = document.querySelectorAll('img')
 
-    // CERTO let listImgSession = []
-    // CERTO imgSession.forEach( imgs => {
-        // CERTO listImgSession.push(imgs.src)
-    // CERTO })
-    // CERTO sessionStorage.setItem('listImgs', JSON.stringify(listImgSession))
+    let listImgSession = []
+    imgSession.forEach( imgs => {
+        listImgSession.push(imgs.src)
+    })
+    sessionStorage.setItem('listImgs', JSON.stringify(listImgSession))
 
         // const secLunch = document.querySelectorAll('.div_Sec_lunch')
 
         // sessionStorage.clear()
 
-        alert('Pedido enviado')
+        alert('Pedido enviado')*/
     },
 
     async cuz(){
@@ -254,13 +237,43 @@ export default {
             // const nome_lanchestring =  JSON.stringify(nome_lanche)
             // alert(nome_lanchestring)
 
-            
-
-
-            
-
-
             // Função para adicionar um valor à chave 'id' na sessionStorage
+
+            // Selecionar todos os elementos <li> dentro da <ul>
+            const AllItems = div_sec.querySelectorAll('ul li')
+
+            // Criar um array para armazenar as informações
+            let listData = []
+
+            // Iterar sobre os elementos <li> e extraia as informações
+            // Para cada item nos LIs, fazer um push() para o array criado
+            AllItems.forEach(item => {
+            listData.push(item.innerText);
+
+            //Armazenar as informações no sessionStorage
+            //sessionStorage.setItem('listData', JSON.stringify(listData)) // Assim vira ARRAY
+            //sessionStorage.setItem('listData', String(listData))  Assim mostra só as letras
+            
+
+
+            if(nome_lanche === 'X-Salada') {
+                sessionStorage.setItem('lanche1', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('listItems1', JSON.stringify(listData))
+                // listSubId.push(sessionStorage.setItem('Id'))
+            }else if(nome_lanche === 'X-Burger'){
+                sessionStorage.setItem('lanche2', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('listItems2', JSON.stringify(listData))
+                // listSubId.push(sessionStorage.setItem('Id'))
+            } 
+            else if(nome_lanche === 'X-Bacon'){
+                sessionStorage.setItem('lanche3', JSON.stringify(nome_lanche))
+                sessionStorage.setItem('listItems3', JSON.stringify(listData))
+                // listSubId.push(sessionStorage.setItem('Id'))
+            }
+
+        })
+
+
             function addToSessionStorage(key, value) {
                 
                 // Obtém o array atual da sessionStorage
@@ -272,18 +285,13 @@ export default {
                 // Armazena o array atualizado de volta na sessionStorage
                 sessionStorage.setItem(key, JSON.stringify(values));
 
+           
 
-                if(nome_lanche === 'X-Salada') {
-                sessionStorage.setItem('lanche1', JSON.stringify(nome_lanche))
-                // listSubId.push(sessionStorage.setItem('Id'))
-            }else if(nome_lanche === 'X-Burger'){
-                sessionStorage.setItem('lanche2', JSON.stringify(nome_lanche))
-                // listSubId.push(sessionStorage.setItem('Id'))
-            } 
-            else if(nome_lanche === 'X-Bacon'){
-                sessionStorage.setItem('lanche3', JSON.stringify(nome_lanche))
-                // listSubId.push(sessionStorage.setItem('Id'))
-            }
+    //         const testeUl = document.querySelector('.inpSub').value
+    // sessionStorage.setItem('random'+1, testeUl)
+
+     
+
             }
 
             // Adiciona os valores 'a' e 'b' à chave 'id'

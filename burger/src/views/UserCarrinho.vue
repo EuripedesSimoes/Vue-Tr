@@ -2,11 +2,11 @@
     <pre>{{ cart }}</pre>
     
 
-    <main class="main_penis">
-        <div class="penis">
+    <main class="main_pe">
+        <div class="pe">
             <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
             <img src="" alt="" id="img_sanduba">
-            <p id="sanduba">Sandubão de penis</p>
+            <p id="sanduba">Sandubão</p>
             <ul id="ul_sanduba"></ul>
             <!-- <p>{{ PV_descontruct }} </p> -->
         </div>
@@ -49,169 +49,61 @@ export default{
             // }
             
 
-            
-        const mainPen = document.querySelector('.main_penis')
-        // let listDt = JSON.parse(sessionStorage.getItem('listData'))
-        const img_sand = document.getElementById('img_sanduba')
-
-
+        
+        const mainPen = document.querySelector('.main_pe')
+         // Para recuperar os dados do sessionStorage
+        // let storedListData = JSON.parse(sessionStorage.getItem('listData'))
+        // storedListData = sessionStorage.getItem('listData')
+        // p_sherman.innerText = storedListData[1]
+                
         let mainId = JSON.parse(sessionStorage.getItem('Id'))
+        let arra = [mainId]
 
-        mainId.forEach( subId => {
+        arra.forEach( subId => {
+            for(let ix=0;ix<3;ix++){
+            
+            if(subId[ix] !== undefined){
+                // alert(subId[ix])
+            
             const div = document.createElement('div')
-            const p = document.createElement('p')
-            const img_sand = document.getElementById('img_sanduba')
+            const ps = document.createElement('p')
+            const img_sandu = document.createElement('img')
             div.className = 'divd'
+
+            const ul = document.createElement('ul')
+            const li_pao = document.createElement('li')
+            // const li_carne = document.createElement('li')
+            // const li_extra = document.createElement('li')
+            ul.appendChild(li_pao)
+            // ul.appendChild(li_carne)
+            // ul.appendChild(li_extra)
             // alert(subId)
-            p.innerText = subId
-            div.appendChild(p)
+            
+            // let storedListData = JSON.parse(sessionStorage.getItem('listItems1'))
+            ps.innerText = subId[ix]
+            
+            if (ps.innerText === 'X-Salada'){
+                // storedListData = sessionStorage.getItem('listData')
+                img_sandu.src = "/img/x-salada.18032e04.jpeg"
+                li_pao.innerText = 'storedListData'+[ix+1]
+            }
+            else if(ps.innerText === 'X-Burger'){
+                img_sandu.src = "/img/x-burger.7b5b3440.jpg"
+            }else if(ps.innerText === 'X-Bacon'){
+                img_sandu.src = "/img/x-bacon.d9425a4f.jpg"
+            }
+
+            //criando as Li's
+            // Pega do listData (EX: listData1), pega as posiçoes de cada item e coloca lá ( EX: li_pao.innerText = String(list[0]) ) 
+            // alert(storedListData)
+            div.appendChild(ps)
+            div.appendChild(img_sandu)
+            div.appendChild(ul)
             
             mainPen.appendChild(div)
-
-            if (p.innerText === 'X-Salada'){
-                img_sand.src = "/img/x-salada.18032e04.jpeg"
             }
-            else if(p.innerText === 'X-Burger'){
-                img_sand.src = "/img/x-burger.7b5b3440.jpg"
-            }else if(p.innerText === 'X-Bacon'){
-                img_sand.src = "/img/x-bacon.d9425a4f.jpg"
-            }
-                
-            div.appendChild(img_sand)
-            
+        }
         })
-        
-        for (let ix = 1; ix<10; ix++){
-            let itemKey = `lanche${ix}`
-            // let listKey = `Listdata${ix}`
-            const itemData = sessionStorage.getItem(itemKey)
-            // const ListData = sessionStorage.getItem(listKey)
-
-            if(itemData) {
-                const item = JSON.parse(itemData)
-                // const list = JSON.parse(ListData)
-
-                let p_sand = document.getElementById('sanduba')
-                // let ul_sand = document.getElementById('ul_sanduba')
-                p_sand.innerText = String(item)
-
-                if (p_sand.innerText === 'X-Salada'){
-                    img_sand.src = "/img/x-salada.18032e04.jpeg"
-                    /*const li_pao = document.createElement('li')
-                    li_pao.innerText = String(list[0])
-                    const li_carne = document.createElement('li')
-                    li_carne.innerText = String(list[1])
-                    const li_extra = document.createElement('li')
-                    li_extra.innerText = String(list[2])
-                    ul_sand.appendChild(li_pao)
-                    ul_sand.appendChild(li_carne)
-                    ul_sand.appendChild(li_extra)*/
-                    // list.innerText = ListData[1]
-            }
-                else if(p_sand.innerText === 'X-Burger'){
-                    img_sand.src = "/img/x-burger.7b5b3440.jpg"
-                    /*const li_pao = document.createElement('li')
-                    li_pao.innerText = String(list[0])
-                    const li_carne = document.createElement('li')
-                    li_carne.innerText = String(list[1])
-                    const li_extra = document.createElement('li')
-                    li_extra.innerText = String(list[2])
-                    ul_sand.appendChild(li_pao)
-                    ul_sand.appendChild(li_carne)
-                    ul_sand.appendChild(li_extra)*/
-                    // list.innerText = ListData[2]
-                }else if(p_sand.innerText === 'X-Bacon'){
-                    img_sand.src = "/img/x-bacon.d9425a4f.jpg"
-                    /*const li_pao = document.createElement('li')
-                    li_pao.innerText = String(list[0])
-                    const li_carne = document.createElement('li')
-                    li_carne.innerText = String(list[1])
-                    const li_extra = document.createElement('li')
-                    li_extra.innerText = String(list[2])
-                    ul_sand.appendChild(li_pao)
-                    ul_sand.appendChild(li_carne)
-                    ul_sand.appendChild(li_extra)
-                    // list.innerText = ListData[3]*/
-                }
-            }
-                
-              
-        }  
-                // const SecPen = document.querySelector('.penis')
-                const div_tr = document.createElement('div')   
-                const img_tr = document.createElement('img')  
-                const p_tr = document.createElement('p')  
-                const ul_tr = document.createElement('ul')  
-                const li_tr = document.createElement('li')
-
-                //1- pegar os itensKey e o listData que terminam com o mesmo numero
-                //2- colocar cada um deles em uma div separada com o for(i=1; i<10; i++)
-                for (let ix = 1; ix<10; ix++){
-                    let itKey = `lanche${ix}`
-                    // let ltKey = `Listdata${ix}`
-                    const itData = sessionStorage.getItem(itKey)
-                    // const LtData = sessionStorage.getItem(ltKey)
-
-                    if(`lanche${ix}` == true){
-                        
-                        const main_tr = document.createElement('div')
-                        let it = JSON.parse(itData)
-                        // let lt = JSON.parse(LtData)
-
-                        img_tr.src = "/img/x-bacon.d9425a4f.jpg"
-
-                        p_tr.innerText = String(it)
-                        // li_tr.innerText = lt
-                        ul_tr.appendChild(li_tr)
-
-                        div_tr.appendChild(img_tr)
-                        div_tr.appendChild(p_tr)
-                        div_tr.appendChild(ul_tr)
-
-
-                        main_tr.appendChild(div_tr)
-                        mainPen.appendChild(main_tr)
-
-                    }
-                    
-                }
-
-                
-        // let mainId = JSON.parse(sessionStorage.getItem('Id'))
-        // let arra = [mainId]
-
-        // arra.forEach( subId => {
-        //     for(let ix=0;ix<3;ix++){
-            
-        //     if(subId[ix] !== undefined){
-        //         alert(subId[ix])
-            
-        //     const div = document.createElement('div')
-        //     const ps = document.createElement('p')
-        //     const img_sandu = document.createElement('img')
-        //     div.className = 'divd'
-        //     // alert(subId)
-            
-        //     ps.innerText = subId[ix]
-            
-
-        //     if (ps.innerText === 'X-Salada'){
-        //         img_sandu.src = "/img/x-salada.18032e04.jpeg"
-        //     }
-        //     else if(ps.innerText === 'X-Burger'){
-        //         img_sandu.src = "/img/x-burger.7b5b3440.jpg"
-        //     }else if(ps.innerText === 'X-Bacon'){
-        //         img_sandu.src = "/img/x-bacon.d9425a4f.jpg"
-        //     }
-                
-            
-        //     div.appendChild(ps)
-        //     div.appendChild(img_sandu)
-            
-        //     mainPen.appendChild(div)
-        //     }
-        // }
-        // })
         
 
            /*          
@@ -293,7 +185,7 @@ export default{
 
             //for(let ix=1; ix<5; ix++){
                         
-                    //const mainPen = document.querySelector('.main_penis')
+                    //const mainPen = document.querySelector('.main_pe')
                     //  const div = document.createElement('div')
                     //  div.className = 'divd'
                     //  mainPen.appendChild(div)
@@ -353,7 +245,7 @@ export default{
        /* p_sherman.innerText = storedListData[1]
         console.log(storedListData)*/
 
-        /*const MPen = document.querySelector('.main_penis')
+        /*const MPen = document.querySelector('.main_pe')
         const srcArmazenados = JSON.parse(sessionStorage.getItem('listImgs'))
         const imgCreated = document.createElement('img')
         imgCreated.src = srcArmazenados[7]
@@ -391,20 +283,20 @@ export default{
     box-sizing: 0;
 }
 
-.main_penis {
+.main_pe {
     margin: 0 auto;
     height: 400px;
-    width: 700px;
+    width: 800px;
     background-color: rgb(96, 114, 219);
     flex-wrap: wrap;
     display: flex;
 
 }
 
-.penis {
+.pe {
     margin: 0 auto;
     height:150px;
-    width: 690px;
+    width: 750px;
     background-color: rgb(206, 206, 206);
     display: flex;
     justify-content: space-around;
