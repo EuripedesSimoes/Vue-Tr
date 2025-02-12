@@ -66,19 +66,36 @@ export default{
 
             const div_preco_btn = document.createElement('div')
             div_preco_btn.className = 'div_preco_btn'
-
-            const btn_teste = document.createElement('button')
-            btn_teste.innerText = 'teste'
-            btn_teste.addEventListener('click', cu)
-
-        //DIV PREÇO retirado temporariamente
-
+            //DIV PREÇO + <H1>
             const div_preco = document.createElement('div')
             const h1_preco = document.createElement('h1')
-            h1_preco.innerText = `R$ ${burgin_SS.preço}`
+            h1_preco.innerText = `R$ 20`
+            // h1_preco.innerText = `R$ ${burgin_SS.preço}`
 
+            //DIV do - e +
+            const btn_teste = document.createElement('button')
+            btn_teste.innerText = 'teste'
+            btn_teste.addEventListener('click', ()=>{
+                alert('Testando')
+            })
+            const div_btn = document.createElement('div')
+            const btn_brg_minus = document.createElement('button')
+            let p_quanty = document.createElement('p')
+            const btn_brg_add = document.createElement('button')
+            
+            
+            p_quanty.innerText = "0"
+            btn_brg_minus.innerText = '-'
+            btn_brg_add.innerText = '+'
+            div_btn.appendChild(p_quanty, btn_brg_add, btn_brg_minus)
+
+            
+
+            div_preco.appendChild(div_btn)
             div_preco.appendChild(h1_preco)
+            div_preco.appendChild(btn_teste)
             div_preco.className = 'div_preco'
+            div_preco_btn.appendChild(div_preco)
             
             // alert(subId)
             
@@ -118,6 +135,7 @@ export default{
             ul.appendChild(li_carne)
             ul.appendChild(li_extra)
             div.appendChild(ul)
+            div.appendChild(div_preco_btn)
             
             pe.appendChild(div)
             mainPen.appendChild(pe)

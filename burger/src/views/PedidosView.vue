@@ -197,27 +197,20 @@ export default {
         // btn_teste.innerText = 'teste'
         // btn_teste.addEventListener('click', cu)
 
-        //DIV PREÇO retirado temporariamente
-
-    // const div_preco = document.createElement('div')
-    // const h1_preco = document.createElement('h1')
-    // h1_preco.innerText = `R$ ${burgin_SS.preço}`
-
-    // div_preco.appendChild(h1_preco)
-    // div_preco.className = 'div_preco'
-
         //DIV BOTÕES retirado temporariamente
 
     // const div_btn = document.createElement('div')
     // const btn_brg_minus = document.createElement('button')
     // let p_quanty = document.createElement('p')
     // const btn_brg_add = document.createElement('button')
-    const inputSubmit = document.createElement('input')
-
-        
+    
+    
     // p_quanty.innerText = "0"
     // btn_brg_minus.innerText = '-'
     // btn_brg_add.innerText = '+'
+
+    const inputSubmit = document.createElement('input')
+
         inputSubmit.type = 'submit'
         inputSubmit.className = 'inpSub'
         inputSubmit.value = 'Enviar Pedido'

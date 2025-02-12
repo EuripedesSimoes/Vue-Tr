@@ -167,7 +167,7 @@ export default{
   }
   .div_preco_btn {
     max-width: 400px;
-    margin-left: -240px;
+    /* margin-left: -240px; */
     margin-top: -8px;
   }
 
@@ -196,7 +196,7 @@ export default{
   }
   .div_preco_btn {
     max-width: 330px;
-    margin-left: -200px;
+    /* margin-left: -200px; */
     margin-top: -22px;
   }
 }
@@ -281,7 +281,8 @@ export default{
   justify-content: center;
   align-items: center;
   height: 60px;
-  width: 240px;
+  width: 100px;
+  font-size: 14px;
   /* background-color: red; */
 }.div_btn {
   /* background-color: yellow; */
