@@ -1,24 +1,39 @@
 <template>
-    <pre>{{ cart }}</pre>
+    <!-- <pre>{{ cart }}</pre> -->
     
+<div class="div_main">
+    
+        <main class="main_pen">
+            <div class="pe">
+                <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
+                <img src="" alt="" id="img_sanduba">
+                <p id="sanduba">Sandubão</p>
+                <ul id="ul_sanduba"></ul>
+                <!-- <p>{{ PV_descontruct }} </p> -->
+            </div>
+    
+            <!-- <p id="localP">a</p> -->
+    
+        </main>
 
-    <main class="main_pen">
-        <div class="pe">
-            <!-- <img src="../assets/pedidos/pedidos_burger/assetsViews/x-bacon.jpg" alt=""> -->
-            <img src="" alt="" id="img_sanduba">
-            <p id="sanduba">Sandubão</p>
-            <ul id="ul_sanduba"></ul>
-            <!-- <p>{{ PV_descontruct }} </p> -->
+        <div class="aside">
+            <div>
+                <p>Lanche: $23,50</p>
+
+                <p>Entrega: $10</p>
+            </div>
+            <div>
+                <h2>Total: 33,50</h2>
+                <button type="submit">Finalizar</button>
+            </div>
         </div>
-        <CuDashBoard/>
-        
-        <p id="localP">a</p>
-    </main>
+</div>
+
 </template>
 
 <script>
 // import { forEach } from 'core-js/core/array';
-import CuDashBoard from '../components/CuDashBoard.vue'
+// import CuDashBoard from '../components/CuDashBoard.vue'
 // import PedidosView from './PedidosView.vue';
 // import { useCart } from '@/assets/composables/useCart';
 
@@ -348,7 +363,7 @@ export default{
 
     },
     components: {
-        CuDashBoard
+        // CuDashBoard
     }
     ,
     mounted() {
@@ -376,7 +391,7 @@ export default{
 }
 
 .main_pen {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     height: auto;
     width: 800px;
     background-color: rgb(96, 114, 219);
@@ -400,4 +415,19 @@ export default{
     
 }
 
+.div_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+}.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 300px;
+  background-color: #FF9900;
+  margin-left: 30px;
+  
+}
 </style>
