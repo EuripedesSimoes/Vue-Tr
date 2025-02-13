@@ -73,31 +73,85 @@ export default{
             // h1_preco.innerText = `R$ ${burgin_SS.preço}`
 
             //DIV do - e +
-            const btn_teste = document.createElement('button')
-            btn_teste.innerText = 'teste'
-            btn_teste.addEventListener('click', ()=>{
-                alert('Testando')
-            })
+            // const btn_teste = document.createElement('button')
+            // btn_teste.innerText = 'teste'
+            // btn_teste.addEventListener('click', ()=>{
+            //     alert('Testando')
+            // })
             const div_btn = document.createElement('div')
+            div_btn.className = 'div_btn'
             const btn_brg_minus = document.createElement('button')
             let p_quanty = document.createElement('p')
             const btn_brg_add = document.createElement('button')
             
             
-            p_quanty.innerText = "0"
             btn_brg_minus.innerText = '-'
+            p_quanty.innerText = "0"
             btn_brg_add.innerText = '+'
-            div_btn.appendChild(p_quanty, btn_brg_add, btn_brg_minus)
+            div_btn.appendChild(btn_brg_minus)
+            div_btn.appendChild(p_quanty)
+            div_btn.appendChild(btn_brg_add)
 
-            
-
-            div_preco.appendChild(div_btn)
             div_preco.appendChild(h1_preco)
-            div_preco.appendChild(btn_teste)
+            div_preco.appendChild(div_btn)
+            // div_preco.appendChild(btn_teste)
             div_preco.className = 'div_preco'
             div_preco_btn.appendChild(div_preco)
             
             // alert(subId)
+
+
+           /* function more(){
+            alert(p_quanty.innerText)
+
+            //pega o texto dentro do P_QUANTY e transforma em numero
+            let valorAtual = Number(p_quanty.innerText)
+            //ao clicar, recebe um novo valor que é a soma do numero (ex-string) + 1
+            let novoValor = valorAtual + 1
+            //novo texto dentro de P_QUANTY é esse novo valor
+            p_quanty.innerText = novoValor
+            
+        }
+            */
+            /*function min(){
+            let valorAtual = Number(p_quanty.innerText)
+            let novoValor = valorAtual - 1
+                if(novoValor > 0){
+                    // se o novo valor for maior que 0, continue diminuindo
+                p_quanty.innerText = novoValor
+                }
+                else if (novoValor <= 0){
+                    // se o novo valor for igual ou menor que 0, novo valor = 0
+                    novoValor = 0
+                    p_quanty.innerText = novoValor
+                    alert('Desejas gozar????')
+                }
+            }*/
+            btn_brg_add.addEventListener('click', () => {
+
+            //pega o texto dentro do P_QUANTY e transforma em numero
+            let valorAtual = Number(p_quanty.innerText)
+            //ao clicar, recebe um novo valor que é a soma do numero (ex-string) + 1
+            let novoValor = valorAtual + 1
+            //novo texto dentro de P_QUANTY é esse novo valor
+            p_quanty.innerText = novoValor
+            
+        })
+            btn_brg_minus.addEventListener('click', () => {
+            let valorAtual = Number(p_quanty.innerText)
+            let novoValor = valorAtual - 1
+                if(novoValor > 0){
+                    // se o novo valor for maior que 0, continue diminuindo
+                p_quanty.innerText = novoValor
+                }
+                else if (novoValor <= 0){
+                    // se o novo valor for igual ou menor que 0, novo valor = 0
+                    novoValor = 0
+                    p_quanty.innerText = novoValor
+                    alert('Desejas zerar????')
+                }
+            })
+
             
             let storedListData1 = JSON.parse(sessionStorage.getItem('listItems1'))
             let storedListData2 = JSON.parse(sessionStorage.getItem('listItems2'))

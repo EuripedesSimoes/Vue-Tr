@@ -190,13 +190,6 @@ export default {
 
         //criando os botões de diminuir e adicionar a quantidade de lanches
 
-    //const div_preco_btn = document.createElement('div')
-    //div_preco_btn.className = 'div_preco_btn'
-
-        // const btn_teste = document.createElement('button')
-        // btn_teste.innerText = 'teste'
-        // btn_teste.addEventListener('click', cu)
-
         //DIV BOTÕES retirado temporariamente
 
     // const div_btn = document.createElement('div')
@@ -302,16 +295,6 @@ export default {
         })
         // inputSubmit.addEventListener('click', this.submitarStorage)
 
-
-        // div_btn.appendChild(btn_brg_minus)
-        // div_btn.appendChild(p_quanty)
-        // div_btn.appendChild(btn_brg_add)
-        // div_btn.className = 'div_btn'
-
-        /*div_preco_btn.appendChild(div_preco)
-        div_preco_btn.appendChild(div_btn)*/
-        // div_preco_btn.appendChild(btn_teste)
-
         /*divContainerDesc.appendChild(div_preco_btn)*/
         divContainerDesc.appendChild(inputSubmit)
 
@@ -323,33 +306,7 @@ export default {
         // divMainlunch.appendChild(inputSubmit)
         divMainlunch.appendChild(div2lunch)
 
-       /* function more(){
-            // alert(p_quanty.innerText)
-
-            //pega o texto dentro do P_QUANTY e transforma em numero
-            let valorAtual = Number(p_quanty.innerText)
-            //ao clicar, recebe um novo valor que é a soma do numero (ex-string) + 1
-            let novoValor = valorAtual + 1
-            //novo texto dentro de P_QUANTY é esse novo valor
-            p_quanty.innerText = novoValor
-            
-        }*/
-        
-        /*function min(){
-        let valorAtual = Number(p_quanty.innerText)
-        let novoValor = valorAtual - 1
-            if(novoValor > 0){
-                // se o novo valor for maior que 0, continue diminuindo
-            p_quanty.innerText = novoValor
-            }
-            else if (novoValor <= 0){
-                // se o novo valor for igual ou menor que 0, novo valor = 0
-                novoValor = 0
-                p_quanty.innerText = novoValor
-            }
-        }
-        btn_brg_add.addEventListener('click', more)
-        btn_brg_minus.addEventListener('click', min)*/
+       
         
         // const bodyy = document.body.style.backgroundColor = 'black'
         // const bodyy = document.querySelector('main')

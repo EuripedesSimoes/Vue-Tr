@@ -271,25 +271,26 @@ export default{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 100px;
   /* width: 400px; */
   /* margin-left: -240px; */
   background-color: rgba(34, 34, 34, 0.384);
   backdrop-filter: blur(2px);
 }.div_preco {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 100px;
+  height: 100px;
+  width: 120px;
   font-size: 14px;
+  margin-top: 15px;
   /* background-color: red; */
 }.div_btn {
   /* background-color: yellow; */
     /* margin-left: -240px; */
-    height: 60px;
-    /* width: 100%; */
-    width: 160px;
+    height: 50px;
+    width: 120px;
     backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
@@ -297,7 +298,7 @@ export default{
     flex-direction: row;
     /* row-gap: 25px; */
     button {
-      background-color: rgba(37, 37, 37, 0.582);
+      background-color: rgba(37, 37, 37, 0.685);
       height: 40px;
       width: 40px;
       font-size: 20px;
@@ -314,9 +315,10 @@ export default{
       transition-duration: 2s;  */
     }
     p {
-      background-color: black;
+      /* background-color: black; */
       color: white;
       margin: 5px;
+      font-size: 26px;
     }
 }
 input {
@@ -430,7 +432,7 @@ body {
   color: #2c3e50;
 }
 .divd {
-    width: 70%;
+    width: 90%;
     height: 150px;
     background-color: rgba(255, 0, 0, 0.534);
     display: flex;
