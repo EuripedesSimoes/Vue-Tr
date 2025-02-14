@@ -18,7 +18,7 @@
 
         <div class="aside">
             <div>
-                <p>Lanche: $23,50</p>
+                <p class="lanche_preco">Lanche: $23,50</p>
 
                 <p>Entrega: $10</p>
             </div>
@@ -209,6 +209,12 @@ export default{
             pe.appendChild(div)
             mainPen.appendChild(pe)
             }
+
+
+            // let precos = document.querySelectorAll('h1_preco')
+            // precos = Number(precos)
+            // let ka = []
+            // ka.push(precos)
         }
         })
         
@@ -393,7 +399,7 @@ export default{
 .main_pen {
     /* margin: 0 auto; */
     height: auto;
-    width: 800px;
+    width: 650px;
     background-color: rgb(96, 114, 219);
     flex-wrap: wrap;
     display: flex;
@@ -420,14 +426,27 @@ export default{
     justify-content: center;
     align-items: center;
     width: 99%;
+    background-color: rgba(255, 228, 196, 0.562);
 }.aside {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 200px;
-  width: 300px;
+  width: 200px;
   background-color: #FF9900;
   margin-left: 30px;
-  
+    p,h2 {
+    
+    margin-bottom: 10px;
+    }
+    button {
+        width: 150px;
+        height: 50px;
+        background-color: #4dff91;
+        color: black;
+        font-size: 30px;
+        font-weight: 700;
+    }
 }
 </style>
