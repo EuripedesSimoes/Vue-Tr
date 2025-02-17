@@ -18,13 +18,13 @@
 
         <div class="aside">
             <div>
-                <p class="lanche_preco">Lanche: $23,50</p>
+                <p class="lanche_preco">Lanche: $<span class="lanche_span">23</span></p>
 
-                <p>Entrega: $10</p>
+                <p class="entrega_preco">Entrega: $<span class="entrega_span">10</span></p>
             </div>
             <div>
-                <h2>Total: 33,50</h2>
-                <button type="submit">Finalizar</button>
+                <h2 class="total_preco">Total: $<span class="total_span">33,50</span></h2>
+                <button type="submit" class="final_compra">Finalizar</button>
             </div>
         </div>
 </div>
@@ -84,7 +84,9 @@ export default{
             //DIV PREÇO + <H1>
             const div_preco = document.createElement('div')
             const h1_preco = document.createElement('h1')
-            h1_preco.innerText = `R$ 20`
+            const span_preco = document.createElement('span')
+            h1_preco.innerText = `R$ `
+            span_preco.innerText = '20'
             // h1_preco.innerText = `R$ ${burgin_SS.preço}`
 
             //DIV do - e +
@@ -107,6 +109,7 @@ export default{
             div_btn.appendChild(p_quanty)
             div_btn.appendChild(btn_brg_add)
 
+            h1_preco.appendChild(span_preco)
             div_preco.appendChild(h1_preco)
             div_preco.appendChild(div_btn)
             // div_preco.appendChild(btn_teste)
@@ -115,33 +118,7 @@ export default{
             
             // alert(subId)
 
-
-           /* function more(){
-            alert(p_quanty.innerText)
-
-            //pega o texto dentro do P_QUANTY e transforma em numero
-            let valorAtual = Number(p_quanty.innerText)
-            //ao clicar, recebe um novo valor que é a soma do numero (ex-string) + 1
-            let novoValor = valorAtual + 1
-            //novo texto dentro de P_QUANTY é esse novo valor
-            p_quanty.innerText = novoValor
-            
-        }
-            */
-            /*function min(){
-            let valorAtual = Number(p_quanty.innerText)
-            let novoValor = valorAtual - 1
-                if(novoValor > 0){
-                    // se o novo valor for maior que 0, continue diminuindo
-                p_quanty.innerText = novoValor
-                }
-                else if (novoValor <= 0){
-                    // se o novo valor for igual ou menor que 0, novo valor = 0
-                    novoValor = 0
-                    p_quanty.innerText = novoValor
-                    alert('Desejas gozar????')
-                }
-            }*/
+            // FUNÇÕES MORE E MIN
             btn_brg_add.addEventListener('click', () => {
 
             //pega o texto dentro do P_QUANTY e transforma em numero
@@ -216,6 +193,38 @@ export default{
             // let ka = []
             // ka.push(precos)
         }
+            const lanchePreco = document.querySelector('.lanche_span')
+            // const toa = document.querySelector('.final_compra')
+
+
+            //Finalização da compra
+           /* toa.addEventListener('click', () => {
+                // ev.preventDefault()
+                alert(lanchePreco.innerText)
+                // alert(h1Span[0].innerText)
+            })*/
+
+            // pegar todos os h1 span do codigo
+            let h1Span = document.querySelectorAll('h1 span')
+            // somar eles
+            let valor_span = 0
+            h1Span.forEach(spa => {
+                let number = Number(spa.innerText)
+                if (number >= 0) {
+                    valor_span  += number
+                }
+                // const number = Number(spa.innerText);
+                //     if (!isNaN(number)) {
+                //    valor_span += number;
+                // }
+                })
+                // alert(valor_span)
+            lanchePreco.innerText = valor_span
+                
+            // } )
+            
+
+
         })
         
 
